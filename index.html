@@ -191,6 +191,16 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .buy-links { margin-top: 16px; font-size: 0.72rem; color: rgba(255,255,255,0.7); }
 .buy-links a { color: var(--terra-lt); text-decoration: none; margin-right: 14px; }
 .buy-links a:hover { text-decoration: underline; }
+.readmore-link {
+  display: inline-block;
+  margin: 6px 0 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terra-lt);
+  text-decoration: none;
+}
+.readmore-link:hover { text-decoration: underline; }
 .book-page {
   background: var(--cream);
   padding: 56px 48px 70px;
@@ -318,10 +328,12 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   text-align: center;
 }
 .contact-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  margin-bottom: 8px;
-  color: var(--ink);
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 20px;
 }
 .contact-sub {
   font-size: 0.8rem;
@@ -386,9 +398,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   </div>
   <section class="contact-section" id="contact">
     <div class="contact-inner">
-    <div class="section-eyebrow">Contact</div>
     <h2 class="contact-title">Connect with Dr Sid Mohandas</h2>
-    <p class="contact-sub">Professional and social profiles</p>
     <div class="social-row">
       <a class="social-link" href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.96 1.96 0 1 0 5.3 6.92 1.96 1.96 0 0 0 5.25 3zM20.44 13.37c0-3.45-1.84-5.06-4.3-5.06a3.72 3.72 0 0 0-3.36 1.85V8.5H9.4V20h3.38v-6.05c0-1.6.3-3.15 2.29-3.15 1.95 0 1.98 1.82 1.98 3.25V20h3.39v-6.63z"/></svg>
@@ -403,7 +413,6 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.25-1.46 1.5-1.46h1.7V3.96c-.3-.04-1.32-.12-2.5-.12-2.48 0-4.18 1.5-4.18 4.3V10H7.2v3h2.82v8h3.48z"/></svg>
       </a>
     </div>
-    <div class="social-labels"><span>LinkedIn</span><span>Instagram</span><span>X</span><span>Facebook</span></div>
     </div>
   </section>
   
@@ -432,6 +441,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
       <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><div class="featured-title">Re-Imagining Gender in the<br>Early Childhood Workforce</div></a>
       <div class="featured-subtitle">Feminist and More-than-human Perspectives</div>
       <p class="featured-desc">This book draws on feminist and more-than-human approaches to re-imagine gender in the early childhood workforce and foregrounds how gendered, racialised, classed and casted forces are produced through everyday nursery relations.</p>
+      <a href="#" class="readmore-link" onclick="openBookPage(); return false;">Read more about this book</a>
       <div class="featured-meta"><div class="meta-item"><strong>Publisher</strong>Bloomsbury Academic</div><div class="meta-item"><strong>Series</strong>Feminist Thought in Childhood Research</div><div class="meta-item"><strong>Year</strong>2026</div></div>
       <div class="buy-links">
         <a href="https://www.bloomsbury.com/au/reimagining-gender-in-the-early-childhood-workforce-9781350534582/" target="_blank" rel="noopener noreferrer">Buy (AU)</a>
