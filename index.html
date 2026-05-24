@@ -40,7 +40,13 @@ nav {
 .hero-name em { font-style: italic; color: var(--terra); }
 .hero-roles { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--muted); margin-bottom: 36px; }
 .hero-bio { font-size: 0.92rem; line-height: 1.8; max-width: 420px; margin-bottom: 48px; }
-.hero-cta { display: flex; gap: 16px; align-items: center; }
+.hero-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: min(460px, 92%);
+}
 .hero-photo-frame {
   margin-top: 14px;
   width: min(460px, 92%);
@@ -68,6 +74,12 @@ nav {
   border: 1px solid #4a3a32;
 }
 .btn-ghost:hover { background: #4a3a32; color: #fff4e7; border-color: #5a463d; }
+.hero-cta .btn-primary,
+.hero-cta .btn-ghost {
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+}
 
 .hero-right {
   background: var(--ink);
@@ -201,6 +213,13 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   text-decoration: none;
 }
 .readmore-link:hover { text-decoration: underline; }
+.inline-more {
+  color: var(--terra-lt);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  text-decoration: none;
+}
+.inline-more:hover { text-decoration: underline; }
 .book-page {
   background: var(--cream);
   padding: 56px 48px 70px;
@@ -288,6 +307,11 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .bio-side-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); margin: 22px 0 8px; }
 .bio-sidebar p, .bio-sidebar a { font-size: 0.86rem; line-height: 1.5; color: var(--muted); text-decoration: none; }
 .bio-sidebar a:hover { text-decoration: underline; }
+.bio-selected-list span {
+  display: block;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
 .bio-main { background: var(--cream); padding: 42px 36px 48px; }
 .bio-name { font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 1.02; margin-bottom: 8px; color: var(--ink); }
 .bio-role { font-size: 1.18rem; color: var(--muted); margin-bottom: 2px; }
@@ -317,6 +341,35 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .pub-long em { font-family: 'Cormorant Garamond', serif; font-size: 1.03em; }
 .pub-block { display: block; }
 .pub-block.hidden { display: none; }
+.featured-book.hidden { display: none; }
+.pub-list.dark-mode { background: var(--ink); }
+.pub-list.dark-mode .pub-long h4,
+.pub-list.dark-mode .pub-long p,
+.pub-list.dark-mode .pub-long strong { color: rgba(255,255,255,0.88); }
+.pub-list.dark-mode .pub-long em { color: rgba(255,255,255,0.62); }
+.pub-list.single-tab-view .pub-block h4 { display: none; }
+.pub-bottom-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 28px 0 40px;
+}
+.pub-bottom-nav a {
+  border: 1px solid var(--terra-lt);
+  padding: 8px 12px;
+  text-decoration: none;
+  color: var(--terra-dk);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.pub-bottom-nav a:hover { background: rgba(185,74,44,0.06); }
+.pub-list.dark-mode .pub-bottom-nav a {
+  color: var(--terra-lt);
+  border-color: rgba(232,196,180,0.45);
+  background: rgba(255,255,255,0.04);
+}
+.pub-list.dark-mode .pub-bottom-nav a:hover { background: rgba(255,255,255,0.08); }
 .contact-section {
   border-top: 1px solid var(--rule);
   background: var(--white);
@@ -357,6 +410,55 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .social-link:hover { background: rgba(185,74,44,0.16); }
 .social-link svg { width: 18px; height: 18px; fill: currentColor; }
 .social-labels { display: flex; justify-content: center; gap: 14px; margin-top: 10px; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.contact-strip {
+  border-top: 1px solid var(--rule);
+  background: var(--white);
+  padding: 28px 48px 34px;
+}
+.contact-page {
+  background: var(--cream);
+  padding: 56px 48px 72px;
+  min-height: calc(100vh - 64px);
+}
+.contact-page .contact-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+.contact-page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 8px 0 12px;
+}
+.contact-page-copy {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.contact-email {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--terra-dk);
+  text-decoration: none;
+  border-bottom: 1px solid var(--terra-lt);
+  padding-bottom: 2px;
+}
+.contact-email:hover { color: var(--terra); }
+.site-footer {
+  background: var(--ink);
+  border-top: 3px solid var(--terra);
+  padding: 44px 48px 36px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 40px;
+}
+.site-footer .footer-brand { margin-bottom: 8px; }
+.site-footer .footer-links a:hover { color: var(--terra-lt); }
+@media (max-width: 900px) {
+  .site-footer { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -365,16 +467,16 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <nav>
     <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" class="active" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+      <li><a href="#" class="active" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">Professional Profile</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
     </ul>
   </nav>
   <section class="hero" id="home-top">
     <div class="hero-left">
       <div class="hero-eyebrow">Middlesex University London</div>
       <h1 class="hero-name">Dr. Sid<br><em>Mohandas</em></h1>
-      <p class="hero-roles">Researcher · Practitioner</p>
+      <p class="hero-roles">Researcher  |  Practitioner</p>
       <p class="hero-bio"><strong>Dr Sid Mohandas</strong> is a Montessori practitioner and childhood studies scholar, whose research in early childhood employs feminist, decolonial, anticolonial and more-than-human approaches.</p>
-      <div class="hero-cta"><a href="#" class="btn-primary" onclick="openBookPage(); return false;">Check Out My Book</a><a href="#" class="btn-ghost" onclick="openBioPage(); return false;">About Sid</a></div>
+      <div class="hero-cta"><a href="#" class="btn-primary" onclick="openBookPage(); return false;">Check Out My Book</a><a href="#" class="btn-ghost" onclick="openBioPage(); return false;">Professional Profile</a></div>
       <div class="hero-photo-frame">
         <img class="hero-photo" src="Dr. Sid Mohandas Research Files/Sid Mohandas wt Book.jpg" alt="Dr Sid Mohandas portrait">
       </div>
@@ -389,32 +491,39 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
         <div class="book-label">Latest Publication</div>
         <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><div class="book-title">Re-Imagining Gender in the Early Childhood Workforce</div></a>
         <div class="book-sub">Feminist and More-than-human Perspectives</div>
-        <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><div class="book-publisher">Bloomsbury Academic · 2026 · View on ResearchGate</div></a>
+        <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><div class="book-publisher">Bloomsbury Academic  |  2026  |  View on ResearchGate</div></a>
       </div>
     </div>
   </section>
   <div class="strip" id="research">
-    <div class="strip-item">Bloomsbury Academic Author</div><div class="strip-item">Middlesex University London</div><div class="strip-item">BERJ Co-Editor</div><div class="strip-item">Australian Research Council</div><div class="strip-item">SAGE · Taylor &amp; Francis</div>
+    <div class="strip-item">Bloomsbury Academic Author</div><div class="strip-item">Middlesex University London</div><div class="strip-item">BERJ Co-Editor</div><div class="strip-item">Australian Research Council</div><div class="strip-item">SAGE  |  Taylor &amp; Francis</div>
   </div>
-  <section class="contact-section" id="contact">
-    <div class="contact-inner">
-    <h2 class="contact-title">Connect with Dr Sid Mohandas</h2>
-    <div class="social-row">
-      <a class="social-link" href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.96 1.96 0 1 0 5.3 6.92 1.96 1.96 0 0 0 5.25 3zM20.44 13.37c0-3.45-1.84-5.06-4.3-5.06a3.72 3.72 0 0 0-3.36 1.85V8.5H9.4V20h3.38v-6.05c0-1.6.3-3.15 2.29-3.15 1.95 0 1.98 1.82 1.98 3.25V20h3.39v-6.63z"/></svg>
-      </a>
-      <a class="social-link" href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 1.9A3.86 3.86 0 0 0 3.9 7.75v8.5A3.86 3.86 0 0 0 7.75 20.1h8.5a3.86 3.86 0 0 0 3.85-3.85v-8.5a3.86 3.86 0 0 0-3.85-3.85h-8.5zm8.87 1.42a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2z"/></svg>
-      </a>
-      <a class="social-link" href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer" aria-label="X">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 3h2.87l-6.27 7.16L22.9 21h-5.8l-4.55-5.95L7.32 21H4.45l6.7-7.66L1.1 3h5.95l4.11 5.43L18.9 3zm-1.01 16.24h1.59L6.2 4.67H4.5l13.39 14.57z"/></svg>
-      </a>
-      <a class="social-link" href="https://www.facebook.com/profile.php?id=100010096181324" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.25-1.46 1.5-1.46h1.7V3.96c-.3-.04-1.32-.12-2.5-.12-2.48 0-4.18 1.5-4.18 4.3V10H7.2v3h2.82v8h3.48z"/></svg>
-      </a>
+<footer class="site-footer">
+    <div>
+      <div class="footer-brand">Dr. Sid Mohandas</div>
+      <div class="footer-tagline">Researcher  |  Practitioner</div>
     </div>
+    <div>
+      <div class="footer-col-label">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li>
+        <li><a href="#" onclick="openBioPage(); return false;">Professional Profile</a></li>
+        <li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li>
+        <li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li>
+        <li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
+      </ul>
     </div>
-  </section>
+    <div>
+      <div class="footer-col-label">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer">Academia.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer">X  |  Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
   
 </div>
 
@@ -422,7 +531,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <nav>
     <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" class="active" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">Professional Profile</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" class="active" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
     </ul>
   </nav>
   <div class="pub-hero" id="pub-top">
@@ -433,15 +542,14 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
     </div>
     <div class="pub-hero-stat"><span class="pub-hero-num"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">160</a></span><span class="pub-hero-numlabel"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar citations<br>(h-index 8)</a></span></div>
   </div>
-  <div class="filter-row"><button class="filter-btn active" onclick="switchPubTab(this, 'all')">All</button><button class="filter-btn" onclick="openBookPage()">Latest Book</button><button class="filter-btn" onclick="switchPubTab(this, 'extant')">Extant Peer-Reviewed</button><button class="filter-btn" onclick="switchPubTab(this, 'inpress')">In Press &amp; Forthcoming Peer-Reviewed</button><button class="filter-btn" onclick="switchPubTab(this, 'research')">Research</button><button class="filter-btn" onclick="switchPubTab(this, 'misc')">Miscellaneous</button></div>
-  <div class="featured-book">
+  <div class="filter-row"><button class="filter-btn active" onclick="switchPubTab(this, 'all')">All</button><button class="filter-btn" onclick="switchPubTab(this, 'latestbook')">Latest Book</button><button class="filter-btn" onclick="switchPubTab(this, 'extant')">Extant Peer-Reviewed</button><button class="filter-btn" onclick="switchPubTab(this, 'inpress')">In Press &amp; Forthcoming Peer-Reviewed</button><button class="filter-btn" onclick="switchPubTab(this, 'research')">Research</button><button class="filter-btn" onclick="switchPubTab(this, 'misc')">Miscellaneous</button></div>
+  <div class="featured-book hidden" id="featured-book-block">
     <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><img class="book-cover-img" src="Dr. Sid Mohandas Research Files/Sid Mohandas Book Cover.jpg" alt="Re-imagining Gender in the Early Childhood Workforce book cover"></a>
     <div>
-      <div class="featured-label">Monograph · 2026</div>
+      <div class="featured-label">Monograph  |  2026</div>
       <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><div class="featured-title">Re-Imagining Gender in the<br>Early Childhood Workforce</div></a>
       <div class="featured-subtitle">Feminist and More-than-human Perspectives</div>
-      <p class="featured-desc">This book draws on feminist and more-than-human approaches to re-imagine gender in the early childhood workforce and foregrounds how gendered, racialised, classed and casted forces are produced through everyday nursery relations.</p>
-      <a href="#" class="readmore-link" onclick="openBookPage(); return false;">Read more about this book</a>
+      <p class="featured-desc">This book draws on feminist and more-than-human approaches to re-imagine gender in the early childhood workforce and foregrounds how gendered, racialised, classed and casted forces are produced through everyday nursery relations. <a href="#" class="inline-more" onclick="openBookPage(); return false;">More...</a></p>
       <div class="featured-meta"><div class="meta-item"><strong>Publisher</strong>Bloomsbury Academic</div><div class="meta-item"><strong>Series</strong>Feminist Thought in Childhood Research</div><div class="meta-item"><strong>Year</strong>2026</div></div>
       <div class="buy-links">
         <a href="https://www.bloomsbury.com/au/reimagining-gender-in-the-early-childhood-workforce-9781350534582/" target="_blank" rel="noopener noreferrer">Buy (AU)</a>
@@ -452,73 +560,102 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   </div>
   <div class="pub-list" id="pub-list">
     <div class="pub-long">
-      <h3>Publications (Articles, Chapters, and Outputs)</h3>
       <div class="pub-block" data-tab="all">
-        <h4>Books</h4>
+        <h4>Book</h4>
         <p><strong>Featured separately:</strong> <em>Re-imagining Gender in the Early Childhood Workforce: Feminist and More-than-human Perspectives</em> (see <strong>Latest Book</strong> tab for details, excerpt, and buy links).</p>
       </div>
 
-      <div class="pub-block" data-tab="extant all" id="extant-sec">
+      <div class="pub-block hidden" data-tab="extant" id="extant-sec">
         <h4>Extant Peer-Reviewed Publications</h4>
         <p><strong>Mohandas, S. &amp; Osgood, J.</strong> (2025) Feminist Posthumanism. In E. Blair &amp; S. Deckman (eds) <em>The SAGE Encyclopedia of Education and Gender</em>. London: SAGE Publications.</p>
         <p><strong>Osgood, J., Mohandas, S., de Rijke, V. &amp; Sinker, R.</strong> (2025) MESS: an interview with Jayne Osgood and Sid Mohandas. In de Rijke, V. &amp; Sinker, R. (eds) <em>Challenging Contemporary Thinking of Play</em>. New York: Springer.</p>
         <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2025) How gender comes to matter: tracing matter, space, place, time and affect in early childhood research. In J. Prioletta, A. Davies &amp; K. Smith (eds) <em>Bloomsbury Handbook of Gender and Sexuality in Early Childhood</em>. London &amp; New York: Bloomsbury.</p>
-        <p><strong>Osgood, J., Mohandas, S., Forte, S. &amp; Barreiro, J.</strong> (2025) Beyond Anthropocentric Boundaries, Childing as an Embodied Kind of Praxis. <em>Matter: Journal of New Materialist Research</em>, 10, 1–19.</p>
-        <p><strong>Mohandas, S.</strong> (2024) Dalit lifeworlds at risk: When postcolonial critique fails. <em>Knowledge Cultures</em>, 12(2), 49–66.</p>
+        <p><strong>Osgood, J., Mohandas, S., Forte, S. &amp; Barreiro, J.</strong> (2025) Beyond Anthropocentric Boundaries, Childing as an Embodied Kind of Praxis. <em>Matter: Journal of New Materialist Research</em>, 10, 1-19.</p>
+        <p><strong>Mohandas, S.</strong> (2024) Dalit lifeworlds at risk: When postcolonial critique fails. <em>Knowledge Cultures</em>, 12(2), 49-66.</p>
         <p><strong>Mohandas, S.</strong> (2024) Transmogrifying blocks: endarkening gender in nursery encounters. In S. Gannon, A. Pasley &amp; J. Osgood (eds) <em>Gender Un/Bound: Traversing Educational Possibilities</em>. London: Routledge.</p>
-        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2024) Childing: an Ecopedagogy of Refusal. <em>International Journal of Primary, Elementary and Early Years Education (Education 3–13)</em>.</p>
-        <p><strong>Osgood, J., Archer, N., Albin-Clark, J. &amp; Mohandas, S.</strong> (eds) (2024) Bewildering early childhood ‘pioneers’ [Special Issue]. <em>Pedagogy, Culture &amp; Society</em>, 32(4), 875–883.</p>
+        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2024) Childing: an Ecopedagogy of Refusal. <em>International Journal of Primary, Elementary and Early Years Education (Education 3-13)</em>.</p>
+        <p><strong>Osgood, J., Archer, N., Albin-Clark, J. &amp; Mohandas, S.</strong> (eds) (2024) Bewildering early childhood 'pioneers' [Special Issue]. <em>Pedagogy, Culture &amp; Society</em>, 32(4), 875-883.</p>
         <p><strong>Mohandas, S. &amp; Osgood, J.</strong> (2023) Feminist New Materialist Approaches to Childhood Studies. In H. Montgomery (ed.) <em>Oxford Bibliographies</em>. New York: Oxford University Press.</p>
         <p><strong>Mohandas, S.</strong> (2023) Montessori Education and Gender: Recasting gender in Montessori contexts. In A. Murray et al. (eds) <em>Bloomsbury Handbook of Montessori Education</em>. London: Bloomsbury.</p>
         <p><strong>Mohandas, S.</strong> (2023) Play from around three years to four years [video contribution]. In J. Harding (ed.) <em>The Brain that Loves to Play</em>. London: Routledge.</p>
-        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2022) Grappling with the Miseducation of Montessori: a feminist posthuman re-reading of ‘child’ in early childhood contexts. <em>Contemporary Issues in Early Childhood</em>. DOI: 10.1177/14639491221117222.</p>
+        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2022) Grappling with the Miseducation of Montessori: a feminist posthuman re-reading of 'child' in early childhood contexts. <em>Contemporary Issues in Early Childhood</em>. DOI: 10.1177/14639491221117222.</p>
         <p><strong>Mohandas, S.</strong> (2022) Beyond male recruitment: decolonising gender diversification efforts in the early years by attending to pastpresent material-discursive-affective entanglements. <em>Gender &amp; Education</em>. DOI: 10.1080/09540253.2021.1884202.</p>
         <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2021) Figuring gender in early childhood with animal figurines: pursuing tentacular stories about global childhoods in the Anthropocene. In N. Yelland et al. (eds) <em>Global Childhoods Handbook</em>. London: SAGE Publications.</p>
-        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2019) Reconfiguring the ‘Male Montessorian’: the mattering of gender through pink towering practices. <em>Early Years</em>. DOI: 10.1080/09575146.2019.1620181.</p>
+        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2019) Reconfiguring the 'Male Montessorian': the mattering of gender through pink towering practices. <em>Early Years</em>. DOI: 10.1080/09575146.2019.1620181.</p>
       </div>
 
-      <div class="pub-block" data-tab="inpress all" id="inpress-sec">
+      <div class="pub-block hidden" data-tab="inpress" id="inpress-sec">
         <h4>In Press and Forthcoming Peer-Reviewed Publications</h4>
         <p><strong>Bragg, S., Marston, K., Mohandas, S., Osgood, J. &amp; Renold, E.</strong> (eds) (2026, forthcoming) The state of gender, young people, and education: inequities, inter/intrasectionality and inclusivity [Special Issue]. <em>British Education Research Journal</em>.</p>
         <p><strong>Mohandas, S.</strong> (2026, forthcoming) Tending the tea dragons. In S. Truman (ed.) <em>Transdisciplinary Engagements with SF</em>. London: Bloomsbury.</p>
         <p><strong>Mohandas, S.</strong> (2026) Re-encountering gender in the early childhood workforce. In L. Knight &amp; A. Longley (eds) <em>Art, Connection, and Creative Encounters: Mapping Social Imaginaries in Uncertain Times</em>.</p>
       </div>
 
-      <div class="pub-block" data-tab="research all" id="research-sec">
+      <div class="pub-block hidden" data-tab="research" id="research-sec">
         <h4>Research</h4>
         <p><strong>Doctoral Thesis</strong><br>Mohandas, S. (2023) <em>Gendered forces at work: tentacular stories from the nursery</em>. Doctoral dissertation, Middlesex University.</p>
         <p><strong>Commissioned Research Consultancy and Outputs</strong></p>
-        <p>2025–2026 Commissioned Researcher, Maria Montessori in India – Immersive Walk-Through. The Montessori Event 2026.</p>
-        <p>2023–2024 Commissioned Scholar, Australian Research Council (ARC) project ‘Transdisciplinary Engagements with Speculative/Science Fiction’, led by Dr Sarah E. Truman.</p>
-        <p>2022 Commissioned Researcher, ‘The State of UK Boys’, Equimundo, with Dr Sara Bragg, Dr Jessica Ringrose, and Idil Cambazoglu.</p>
+        <p>2025-2026 Commissioned Researcher, Maria Montessori in India - Immersive Walk-Through. The Montessori Event 2026.</p>
+        <p>2023-2024 Commissioned Scholar, Australian Research Council (ARC) project 'Transdisciplinary Engagements with Speculative/Science Fiction', led by Dr Sarah E. Truman.</p>
+        <p>2022 Commissioned Researcher, 'The State of UK Boys', Equimundo, with Dr Sara Bragg, Dr Jessica Ringrose, and Idil Cambazoglu.</p>
         <p>Bragg, S., Ringrose, J., Mohandas, S. et al. (2022) <em>The State of UK Boys: Understanding and Transforming Gender in the Lives of UK Boys</em>. Washington, DC: Equimundo.</p>
         <p>Bragg, S., Ringrose, J., Mohandas, S. et al. (2022) <em>The State of UK Boys: An Urgent Call for Connected, Caring Boyhoods</em>. Washington, DC: Equimundo.</p>
       </div>
 
-      <div class="pub-block" data-tab="misc all" id="misc-sec">
+      <div class="pub-block hidden" data-tab="misc" id="misc-sec">
         <h4>Miscellaneous Publications</h4>
         <p><strong>Mohandas, S.</strong> (2025) Stretching time: A Neurodiversity Perspective on Caring Differently. <em>Tapestry</em>.</p>
         <p><strong>Mohandas, S.</strong> (2024) Looking around: a more-than-human sense of belonging. <em>Direction</em>. London: AMI UK.</p>
         <p><strong>Mohandas, S.</strong> (2023) Transforming practice: A critical interrogation of Montessori. <em>Montessori Life</em>. New York: AMS.</p>
         <p><strong>Mohandas, S.</strong> (2023) Montessori and Disability. In <em>Equity Examined: How to Design Schools and Education Programs Where Everyone Thrives</em>. New York: AMS.</p>
         <p><strong>Allen, A., Gerker, H., Wood, K.K., Mohandas, S. et al.</strong> (2023) Innovation: Reflections from the Field. <em>Montessori Life</em>. New York: AMS.</p>
-        <p><strong>Mohandas, S. &amp; Awdry, C.</strong> (2022) Interview with Sid Mohandas. In C. Awdry (ed.) <em>The Montessori Mission: Diversity–Wisdom–Reflection</em>, 155–172. Dubai: Enriching Environments.</p>
-        <p><strong>Pasley, A. &amp; Mohandas, S.</strong> (2021) Interview with And Pasley on Gender Pronouns. <em>LGBTQIA+ Early Years Magazine</em>, Issue 1, 8–9.</p>
-        <p><strong>Mohandas, S. &amp; Morgan Herman, J.</strong> (2020) Maria Montessori: A Life in Pictures and Writings. <em>Montessori Life</em>, 32(2), 34–35.</p>
+        <p><strong>Mohandas, S. &amp; Awdry, C.</strong> (2022) Interview with Sid Mohandas. In C. Awdry (ed.) <em>The Montessori Mission: Diversity-Wisdom-Reflection</em>, 155-172. Dubai: Enriching Environments.</p>
+        <p><strong>Pasley, A. &amp; Mohandas, S.</strong> (2021) Interview with And Pasley on Gender Pronouns. <em>LGBTQIA+ Early Years Magazine</em>, Issue 1, 8-9.</p>
+        <p><strong>Mohandas, S. &amp; Morgan Herman, J.</strong> (2020) Maria Montessori: A Life in Pictures and Writings. <em>Montessori Life</em>, 32(2), 34-35.</p>
         <p><strong>Mohandas, S.</strong> (2020) Reclaiming feminisms in the early years. <em>Montessori International</em>, Issue 127, Spring 2020. London: Montessori Centre International.</p>
-        <p><strong>Mohandas, S.</strong> (2018) Exploring Diversity and Inclusivity in Montessori. <em>Montessori Life</em>, 30(4), 34–35.</p>
+        <p><strong>Mohandas, S.</strong> (2018) Exploring Diversity and Inclusivity in Montessori. <em>Montessori Life</em>, 30(4), 34-35.</p>
         <p><strong>Mohandas, S.</strong> (2015) Report on Museum of Childhood Event. <em>Montessori International</em>, Issue 117, Autumn 2015. London: Montessori St. Nicholas Charity.</p>
       </div>
+      <div class="pub-bottom-nav">
+        <a href="#" onclick="openPublications('pub-top'); return false;">Back to Publications</a>
+        <a href="#" onclick="openBookPage(); return false;">Latest Book</a>
+        <a href="#" onclick="openHome('home-top'); return false;">Home</a>
+      </div>
     </div>
-  </div>
-  <div id="contact" aria-hidden="true"></div>
+  </div><div id="contact" aria-hidden="true"></div>
+  <footer class="site-footer">
+    <div>
+      <div class="footer-brand">Dr. Sid Mohandas</div>
+      <div class="footer-tagline">Researcher  |  Practitioner</div>
+    </div>
+    <div>
+      <div class="footer-col-label">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li>
+        <li><a href="#" onclick="openBioPage(); return false;">Professional Profile</a></li>
+        <li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li>
+        <li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li>
+        <li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-label">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer">Academia.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer">X  |  Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
 </div>
 
 <div id="page-book" class="page">
   <nav>
     <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" class="active" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">Professional Profile</a></li><li><a href="#" class="active" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
     </ul>
   </nav>
   <section class="book-page">
@@ -530,12 +667,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
         <div class="section-eyebrow">Latest Book</div>
         <h2 class="book-page-title">Re-Imagining Gender in the Early Childhood Workforce</h2>
         <div class="book-page-sub">Feminist and More-than-human Perspectives</div>
-        <div class="book-nav-row">
-          <a href="#" onclick="openPublications('pub-top'); return false;">Back to Publications</a>
-          <a href="#" onclick="openPublications('extant-sec'); return false;">Browse Journal Articles</a>
-          <a href="#" onclick="openHome('home-top'); return false;">Back to Home</a>
-        </div>
-        <p class="book-page-copy">This book draws on feminist and more-than-human approaches to re-imagine gender in the early childhood workforce. Debates, policies and practices around gender in the early childhood workforce have predominantly focused on the under-representation of men and the recuperative outcomes promised through the inclusion of men. Mohandas’ research is, however, concerned with the ways a gendered workforce can be re-imagined when the boundaries of research are stretched beyond mere human inclusion and attention is paid to ordinary objects and unassuming relations that constitute everyday life in the nursery.</p>
+        <p class="book-page-copy">This book draws on feminist and more-than-human approaches to re-imagine gender in the early childhood workforce. Debates, policies and practices around gender in the early childhood workforce have predominantly focused on the under-representation of men and the recuperative outcomes promised through the inclusion of men. Mohandas' research is, however, concerned with the ways a gendered workforce can be re-imagined when the boundaries of research are stretched beyond mere human inclusion and attention is paid to ordinary objects and unassuming relations that constitute everyday life in the nursery.</p>
         <p class="book-page-copy">Through an attunement to the atmospheric, a gendered workforce is re-conceptualised as gendered forces that work across bodies (human and nonhuman), spaces, places and temporalities. Through vignettes from the nursery, Mohandas makes visible how each encounter is composed of gendered and more-than-gendered (i.e. racialised, classed and casted) forces, relations, stories and worlds.</p>
         <p class="book-page-copy">Series Editors: Jayne Osgood and Veronica Pacini-Ketchabaw.</p>
         <div class="book-links-row">
@@ -543,16 +675,45 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
           <a href="https://www.bloomsbury.com/uk/reimagining-gender-in-the-early-childhood-workforce-9781350534582/" target="_blank" rel="noopener noreferrer">Buy (UK)</a>
           <a href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer">Read Excerpt</a>
         </div>
+        <div class="book-nav-row">
+          <a href="#" onclick="openPublications('pub-top'); return false;">Back to Publications</a>
+          <a href="#" onclick="openHome('home-top'); return false;">Home</a>
+        </div>
       </div>
     </div>
-  </section>
+  </section><footer class="site-footer">
+    <div>
+      <div class="footer-brand">Dr. Sid Mohandas</div>
+      <div class="footer-tagline">Researcher  |  Practitioner</div>
+    </div>
+    <div>
+      <div class="footer-col-label">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li>
+        <li><a href="#" onclick="openBioPage(); return false;">Professional Profile</a></li>
+        <li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li>
+        <li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li>
+        <li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-label">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer">Academia.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer">X  |  Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
 </div>
 
 <div id="page-bio" class="page">
   <nav>
     <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" class="active" onclick="openBioPage(); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" class="active" onclick="openBioPage(); return false;">Professional Profile</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
     </ul>
   </nav>
   <section class="bio-page">
@@ -566,7 +727,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
         <div class="bio-side-label">Top Skills</div>
         <p>Peer Reviews<br>University Lecturing<br>Web Design</p>
         <div class="bio-side-label">Selected Publications</div>
-        <p>Reconfiguring the ‘Male Montessorian’<br>Montessori and Disability<br>Bewildering early childhood pioneers<br>The State of UK Boys<br>Gendered forces at work</p>
+        <p class="bio-selected-list"><span>Re-imagining Gender in the Early Childhood Workforce</span><span>Reconfiguring the 'Male Montessorian'</span><span>Montessori and Disability</span><span>Bewildering early childhood pioneers</span><span>The State of UK Boys</span><span>Gendered forces at work</span></p>
       </aside>
       <main class="bio-main">
         <div class="bio-name">Dr Sid Mohandas</div>
@@ -574,7 +735,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
         <div class="bio-loc">London, England, United Kingdom</div>
 
         <section class="bio-sec">
-          <h3>About Sid Mohandas</h3>
+          <h3>Summary</h3>
           <div class="bio-intro">
             <p>Dr Sid Mohandas is a Montessori practitioner and childhood studies scholar whose research in early childhood draws on feminist, decolonial, anticolonial and more-than-human approaches. They are based in London, UK.</p>
             <p>Sid's work investigates how gender is constructed and materialised, particularly within Montessori settings, drawing on feminist new materialisms, posthumanism, decolonial and anticolonial theory, and Dalit feminisms. Their research attends to how ordinary objects, spaces and everyday encounters in nursery life carry and produce gendered, racialised, classed and casted forces.</p>
@@ -589,13 +750,15 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
             <div class="bio-org">Leeds Beckett University</div>
             <div class="bio-title">Guest Lecturer</div>
             <div class="bio-dates">February 2024 - February 2024 (1 month)</div>
-            <div class="bio-desc">Teaching Contemporary Theoretical Lenses for the MA Montessori and Social Justice module.</div>
+            <div class="bio-place">United Kingdom</div>
+            <div class="bio-desc">Teaching Contemporary Theoretical Lenses for the MA Montessori and Social Justice module at Leeds Beckett University, Leeds, United Kingdom.</div>
           </div>
           <div class="bio-item">
             <div class="bio-org">Cardiff University / Prifysgol Caerdydd</div>
             <div class="bio-title">Guest Lecturer</div>
             <div class="bio-dates">February 2024 - February 2024 (1 month)</div>
-            <div class="bio-desc">Teaching More-than-human Childhoods for the BA Children and Childhood module.</div>
+            <div class="bio-place">United Kingdom</div>
+            <div class="bio-desc">Guest Lecturer. Teaching More-than-human Childhoods for the BA Children and Childhood module at Cardiff University, Cardiff, United Kingdom.</div>
           </div>
           <div class="bio-item">
             <div class="bio-org">University of Melbourne</div>
@@ -605,28 +768,190 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
           </div>
           <div class="bio-item">
             <div class="bio-org">Middlesex University</div>
-            <div class="bio-title">Research Assistant / Lecturer</div>
-            <div class="bio-dates">March 2020 - January 2024</div>
-            <div class="bio-desc">Research-led teaching and research coordination across early childhood and gender-related projects.</div>
+            <div class="bio-title">Research Assistant</div>
+            <div class="bio-dates">June 2023 - January 2024 (8 months)</div>
+            <div class="bio-place">London Area, United Kingdom</div>
+            <div class="bio-desc">Research Assistant responsible for setting up, designing, and organising an online research platform and repository for the Centre for Educational Research and Scholarship, School of Education, Middlesex University https://mdxcers.com/</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">PhEmaterialisms</div>
+            <div class="bio-title">Research Coordinator and Admin</div>
+            <div class="bio-dates">January 2020 - September 2023 (3 years 9 months)</div>
+            <div class="bio-desc">Research administrator and coordinator, assisting with organising, coordinating and managing research events and meetings.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">IOE - UCL's Faculty of Education and Society</div>
+            <div class="bio-title">Researcher</div>
+            <div class="bio-dates">May 2022 - November 2022 (7 months)</div>
+            <div class="bio-place">London, England, United Kingdom</div>
+            <div class="bio-desc">Promundo State of Boys UK, 4-13 Project.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Middlesex University</div>
+            <div class="bio-title">Lecturer</div>
+            <div class="bio-dates">March 2020 - October 2021 (1 year 8 months)</div>
+            <div class="bio-place">London, England, United Kingdom</div>
+            <div class="bio-desc">Responsible for research-led teaching of a module on Men in Early Years for the MA Childhood and Education in Diverse Societies.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Middlesex University</div>
+            <div class="bio-title">Research Assistant</div>
+            <div class="bio-dates">April 2021 - May 2021 (2 months)</div>
+            <div class="bio-place">United Kingdom</div>
+            <div class="bio-desc">Research Assistant responsible for the production of evidence for REF Impact Case Study for Professor Jayne Osgood's research. Organise, collate and upload research outputs, Middlesex University, London.</div>
           </div>
           <div class="bio-item">
             <div class="bio-org">Montessori Global Education</div>
-            <div class="bio-title">Tutor / Guest Lecturer</div>
-            <div class="bio-dates">October 2018 - June 2021</div>
-            <div class="bio-desc">Supported modules in Gender Diversity and Massive Open Online Courses on Montessori and Gender &amp; Sexuality in Early Years.</div>
+            <div class="bio-title">Tutor</div>
+            <div class="bio-dates">May 2020 - June 2021 (1 year 2 months)</div>
+            <div class="bio-place">United Kingdom</div>
+            <div class="bio-desc">Tutor for Massive Open Online Courses (MOOC) on Roots of Montessori, Montessori Centre International, London.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Montessori Global Education</div>
+            <div class="bio-title">Tutor</div>
+            <div class="bio-dates">May 2020 - June 2021 (1 year 2 months)</div>
+            <div class="bio-place">United Kingdom</div>
+            <div class="bio-desc">Tutor for Massive Open Online Courses (MOOC) on Gender and Sexuality in Early Years, Montessori Centre International, London.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Montessori Global Education</div>
+            <div class="bio-title">Guest Lecturer</div>
+            <div class="bio-dates">October 2019 - November 2019 (2 months)</div>
+            <div class="bio-place">United Kingdom</div>
+            <div class="bio-desc">Supported Gender Diversity in Early Years module for Foundation Degree students at Montessori Centre International through London Metropolitan University.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Montessori Global Education</div>
+            <div class="bio-title">Guest Lecturer</div>
+            <div class="bio-dates">October 2018 - November 2018 (2 months)</div>
+            <div class="bio-place">United Kingdom</div>
+            <div class="bio-desc">Supported Gender Diversity in Early Years for Foundation Degree students at Montessori Centre International through London Metropolitan University.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Riverside Montessori</div>
+            <div class="bio-title">Montessori Teacher and Coordinator</div>
+            <div class="bio-dates">September 2017 - March 2018 (7 months)</div>
+            <div class="bio-place">London, United Kingdom</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Star Child Montessori</div>
+            <div class="bio-title">Montessori Classroom Lead</div>
+            <div class="bio-dates">July 2016 - August 2016 (2 months)</div>
+            <div class="bio-place">Greater London</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Rose House Montessori School</div>
+            <div class="bio-title">Montessori teacher</div>
+            <div class="bio-dates">August 2015 - June 2016 (11 months)</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Star Child Montessori</div>
+            <div class="bio-title">Montessori Classroom Lead</div>
+            <div class="bio-dates">2012 - July 2015 (3 years)</div>
+            <div class="bio-place">Thornton Heath</div>
           </div>
         </section>
 
         <section class="bio-sec">
           <h3>Education</h3>
           <div class="bio-item"><div class="bio-org">Middlesex University</div><div class="bio-title">Doctor of Philosophy (PhD)</div><div class="bio-dates">September 2018 - September 2023</div></div>
-          <div class="bio-item"><div class="bio-org">UCL Institute of Education</div><div class="bio-title">Master’s Degree, Early Childhood Education and Teaching</div><div class="bio-dates">2016 - 2017</div></div>
+          <div class="bio-item"><div class="bio-org">Montessori St. Nicholas</div><div class="bio-title">Teacher Trainer</div><div class="bio-dates">2018 - 2018</div></div>
+          <div class="bio-item"><div class="bio-org">UCL Institute of Education</div><div class="bio-title">Master's Degree, Early Childhood Education and Teaching</div><div class="bio-dates">2016 - 2017</div></div>
           <div class="bio-item"><div class="bio-org">London Metropolitan University</div><div class="bio-title">FDA, Early Childhood Education and Teaching</div></div>
           <div class="bio-item"><div class="bio-org">Montessori Centre International</div><div class="bio-title">Diploma, Montessori Teacher Education</div></div>
         </section>
       </main>
     </div>
+  </section><footer class="site-footer">
+    <div>
+      <div class="footer-brand">Dr. Sid Mohandas</div>
+      <div class="footer-tagline">Researcher  |  Practitioner</div>
+    </div>
+    <div>
+      <div class="footer-col-label">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li>
+        <li><a href="#" onclick="openBioPage(); return false;">Professional Profile</a></li>
+        <li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li>
+        <li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li>
+        <li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-label">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer">Academia.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer">X  |  Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+<div id="page-contact" class="page">
+  <nav>
+    <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">Professional Profile</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" class="active" onclick="openContactPage(); return false;">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="contact-page">
+    <div class="contact-inner">
+      <div class="section-eyebrow">Contact</div>
+      <h2 class="contact-page-title">Connect with Dr Sid Mohandas</h2>
+      <p class="contact-page-copy">For collaborations, speaking invitations, research inquiries, and academic correspondence:</p>
+      <a class="contact-email" href="mailto:s.mohandas.16@ucl.ac.uk">s.mohandas.16@ucl.ac.uk</a>
+      <div class="social-row">
+        <a class="social-link" href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.8v2h.1c.53-1 1.84-2.1 3.8-2.1 4.06 0 4.8 2.67 4.8 6.1V23h-4v-7.1c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78V23h-4V8z"/></svg>
+        </a>
+        <a class="social-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm0 13L5 12.18V17c0 2.76 3.13 5 7 5s7-2.24 7-5v-4.82L12 16z"/></svg>
+        </a>
+        <a class="social-link" href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer" aria-label="Academia">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 22h3l2-4h8l2 4h3L12 2zm-2.5 12L12 8l2.5 6h-5z"/></svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm11.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+        </a>
+        <a class="social-link" href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.4L6.3 22H3.2l7.3-8.4L1 2h6.3l4.4 5.8L18.9 2zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20z"/></svg>
+        </a>
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=100010096181324" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C10.5 6 9 7.8 9 10.6V13H6v3h3v6h3v-6h3l1-3h-4v-2.2c0-1 .4-1.8 1.5-1.8z"/></svg>
+        </a>
+      </div>
+    </div>
   </section>
+  <footer class="site-footer">
+    <div>
+      <div class="footer-brand">Dr. Sid Mohandas</div>
+      <div class="footer-tagline">Researcher  |  Practitioner</div>
+    </div>
+    <div>
+      <div class="footer-col-label">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li>
+        <li><a href="#" onclick="openBioPage(); return false;">Professional Profile</a></li>
+        <li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li>
+        <li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li>
+        <li><a href="#" onclick="openContactPage(); return false;">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-label">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+        <li><a href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer">Academia.edu</a></li>
+        <li><a href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer">X  |  Twitter</a></li>
+      </ul>
+    </div>
+  </footer>
 </div>
 
 <script>
@@ -648,7 +973,27 @@ function openHome(anchorId) {
 
 function openPublications(anchorId) {
   showPage('publications');
-  if (anchorId) setTimeout(() => scrollToId(anchorId), 20);
+  const pubPage = document.getElementById('page-publications');
+  if (pubPage) {
+    pubPage.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    const allBtn = pubPage.querySelector('.filter-row .filter-btn');
+    if (allBtn) allBtn.classList.add('active');
+
+    const featured = document.getElementById('featured-book-block');
+    if (featured) featured.classList.add('hidden');
+
+    pubPage.querySelectorAll('.pub-block').forEach(block => block.classList.remove('hidden'));
+    const pubList = document.getElementById('pub-list');
+    if (pubList) {
+      pubList.classList.remove('dark-mode');
+      pubList.classList.remove('single-tab-view');
+    }
+  }
+  if (anchorId) {
+    setTimeout(() => scrollToId(anchorId), 20);
+  } else {
+    setTimeout(() => scrollToId('pub-list'), 20);
+  }
 }
 
 function activatePubTab(btn, targetId) {
@@ -663,16 +1008,43 @@ function switchPubTab(btn, tab) {
   if (row) row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 
+  const featured = document.getElementById('featured-book-block');
+  if (featured) {
+    if (tab === 'latestbook') {
+      featured.classList.remove('hidden');
+    } else {
+      featured.classList.add('hidden');
+    }
+  }
+
+  const pubList = document.getElementById('pub-list');
+  if (pubList) {
+    if (tab === 'all' || tab === 'latestbook') {
+      pubList.classList.remove('dark-mode');
+    } else {
+      pubList.classList.add('dark-mode');
+    }
+    if (tab === 'all') {
+      pubList.classList.remove('single-tab-view');
+    } else {
+      pubList.classList.add('single-tab-view');
+    }
+  }
+
   const blocks = document.querySelectorAll('.pub-block');
   blocks.forEach(block => {
     const tags = (block.getAttribute('data-tab') || '').split(' ');
-    if (tab === 'all' || tags.includes(tab) || tags.includes('all')) {
+    if (tab === 'all' || tags.includes(tab)) {
       block.classList.remove('hidden');
     } else {
       block.classList.add('hidden');
     }
   });
-  scrollToId('pub-list');
+  if (tab === 'latestbook') {
+    scrollToId('featured-book-block');
+  } else {
+    scrollToId('pub-list');
+  }
 }
 
 function openBookPage() {
@@ -682,6 +1054,15 @@ function openBookPage() {
 function openBioPage() {
   showPage('bio');
 }
+
+function openContactPage() {
+  showPage('contact');
+}
 </script>
 </body>
 </html>
+
+
+
+
+
