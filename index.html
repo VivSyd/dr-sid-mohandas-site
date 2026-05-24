@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Sid Mohandas - Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --terra:#b94a2c; --terra-dk:#8c3520; --terra-lt:#e8c4b4; --cream:#f5f0e8; --parchment:#ede5d6; --ink:#1e1a16; --muted:#7a6e64; --rule:#d9cfc2; --white:#fdfaf5; }
+body { background:var(--cream); color:var(--ink); font-family:'Jost',sans-serif; font-weight:300; line-height:1.7; }
+nav { position:sticky; top:0; z-index:100; background:var(--cream); border-bottom:1px solid var(--rule); display:flex; align-items:center; justify-content:space-between; padding:0 48px; height:64px; }
+.nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:var(--ink); text-decoration:none; }
+.nav-links { display:flex; gap:28px; list-style:none; }
+.nav-links a { font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); text-decoration:none; }
+.nav-links a.active, .nav-links a:hover { color:var(--terra); }
+.hero { padding:72px 48px; border-bottom:1px solid var(--rule); background:var(--parchment); }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.2rem,5vw,3.6rem); line-height:1.1; margin-bottom:14px; }
+.hero p { max-width:760px; }
+.hero-placeholder-wrap { margin-top:26px; }
+.hero-placeholder {
+  width:100%;
+  max-width:420px;
+  height:180px;
+  border:3px dashed #5e5e5e;
+  background:linear-gradient(135deg,#f4f4f4,#cfcfcf);
+  color:#2d2d2d;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:.86rem;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.main { padding:56px 48px 80px; }
+.grid { display:grid; grid-template-columns:320px 1fr; gap:30px; }
+.card { background:var(--white); border:1px solid var(--rule); padding:26px; }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:2rem; line-height:1.15; margin-bottom:18px; }
+.muted { color:var(--muted); }
+.list { list-style:none; }
+.list li { padding:10px 0; border-bottom:1px solid var(--rule); }
+.bw-placeholder { width:100%; max-width:260px; height:320px; border:2px dashed #8f8f8f; background:linear-gradient(135deg,#f0f0f0,#dcdcdc); display:flex; align-items:center; justify-content:center; text-align:center; color:#444; font-size:.8rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:14px; }
+.pub-list .item { padding:16px 0; border-bottom:1px solid var(--rule); }
+.pub-list .year { font-family:'Cormorant Garamond',serif; color:var(--terra); font-size:1rem; margin-bottom:5px; }
+footer { background:var(--ink); padding:36px 48px; color:rgba(255,255,255,.7); border-top:3px solid var(--terra); }
+footer a { color:rgba(255,255,255,.75); text-decoration:none; }
+.sitemap-links a { display:block; margin:8px 0; color:var(--terra-dk); text-decoration:none; }
+@media (max-width:900px){ .grid{grid-template-columns:1fr;} nav{padding:0 20px; height:auto; min-height:64px; flex-wrap:wrap; gap:10px; padding-top:10px; padding-bottom:10px;} .nav-links{flex-wrap:wrap; gap:14px;} .hero,.main,footer{padding-left:20px;padding-right:20px;} }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Dr. Sid Mohandas</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html" >About</a></li>
+    <li><a href="research.html" >Research</a></li>
+    <li><a href="publications.html" >Publications</a></li>
+    <li><a href="teaching.html" >Teaching</a></li>
+    <li><a href="contact.html" >Contact</a></li>
+    <li><a href="sitemap.html" >Sitemap</a></li>
+  </ul>
+</nav>
+<section class="hero"><h1>Dr. Sid Mohandas</h1><p>Montessori practitioner and childhood studies scholar working across feminist, decolonial, anticolonial and more-than-human approaches.</p><div class="hero-placeholder-wrap"><div class="hero-placeholder">Black &amp; White Portrait Placeholder</div></div></section>
+<main class="main">
+  <div class="grid">
+    <aside class="card">
+      <div class="bw-placeholder">Black &amp; White Portrait Placeholder</div>
+      <div class="muted">Replace with final black-and-white headshot.</div>
+    </aside>
+    <section class="card">
+      <h2 class="section-title">At a Glance</h2>
+      <ul class="list">
+        <li>Author: <em>Re-Imagining Gender in the Early Childhood Workforce</em> (Bloomsbury Academic, 2026)</li>
+        <li>Editorial Board: Reconceptualizing Educational Research Methodology</li>
+        <li>Co-editor: BERJ Special Issue (forthcoming)</li>
+        <li>ORCID: 0000-0002-6134-0338</li>
+      </ul>
+    </section>
+  </div>
+</main>
+<footer>
+  <div>Dr. Sid Mohandas · Researcher & Practitioner · London, UK</div>
+</footer>
+</body>
+</html>
