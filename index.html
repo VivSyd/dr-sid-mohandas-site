@@ -55,8 +55,26 @@ nav {
 .btn-ghost { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
 .btn-ghost:hover { color: var(--terra); border-color: var(--terra); }
 
-.hero-right { background: var(--ink); position: relative; overflow: hidden; min-height: calc(100vh - 108px); }
-.hero-stat-row { position: absolute; top: 48px; right: 48px; display: flex; flex-direction: column; gap: 32px; align-items: flex-end; z-index: 3; }
+.hero-right {
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 108px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 48px;
+}
+.hero-stat-row {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: flex-end;
+  text-align: right;
+  z-index: 3;
+}
 .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--terra-lt); line-height: 1; margin-bottom: 12px; display: block; }
 .hero-stat-label { font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); display: block; }
 .hero-book-bg {
@@ -65,7 +83,12 @@ nav {
   repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px);
 }
 /* Book text anchored at bottom */
-.hero-book-card { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 48px; width: 100%; }
+.hero-book-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 460px;
+}
 .book-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra-lt); opacity: 0.7; margin-bottom: 16px; }
 .book-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; line-height: 1.2; color: var(--white); margin-bottom: 10px; max-width: 360px; }
 .book-sub { font-size: 0.8rem; font-style: italic; color: rgba(255,255,255,0.45); margin-bottom: 20px; font-family: 'Cormorant Garamond', serif; }
@@ -163,8 +186,8 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
     <div class="hero-right">
       <div class="hero-book-bg"></div>
       <div class="hero-stat-row">
-        <div><div class="hero-stat-num">160</div><div class="hero-stat-label">Google Scholar Citations</div></div>
-        <div><div class="hero-stat-num">h-index 8</div><div class="hero-stat-label">Google Scholar</div></div>
+        <div><div class="hero-stat-num">160</div><div class="hero-stat-label">Google Scholar citations (all years)</div></div>
+        <div><div class="hero-stat-num">8</div><div class="hero-stat-label">Google Scholar h-index (all years)</div></div>
       </div>
       <div class="hero-book-card">
         <div class="book-label">Latest Publication</div>
