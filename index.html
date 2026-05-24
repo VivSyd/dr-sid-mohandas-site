@@ -14,6 +14,11 @@
 }
 html { scroll-behavior: smooth; font-size: 16px; }
 body { background: var(--cream); color: var(--ink); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+.top-accent {
+  height: 10px;
+  background: var(--ink);
+  border-bottom: 2px solid var(--terra);
+}
 
 .page { display: none; padding-top: 0; }
 .page.active { display: block; }
@@ -148,6 +153,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 </style>
 </head>
 <body>
+<div class="top-accent" aria-hidden="true"></div>
 <div id="page-home" class="page active">
   <nav>
     <a href="#" class="nav-logo">Dr. Sid Mohandas</a>
