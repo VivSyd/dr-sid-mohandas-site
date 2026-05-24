@@ -397,6 +397,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   background: rgba(255,255,255,0.04);
 }
 .pub-list.dark-mode .pub-bottom-nav a:hover { background: rgba(255,255,255,0.08); }
+.hidden-inline { display: none !important; }
 .pub-back-top {
   position: fixed;
   right: 24px;
@@ -423,82 +424,145 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .pub-back-top:hover {
   background: rgba(185,74,44,0.08);
 }
-.contact-section {
+.contact-page {
+  background: var(--cream);
+  padding: 0;
+  min-height: calc(100vh - 64px);
+}
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--rule);
+}
+.contact-left-pane {
   background: var(--white);
-  padding: 56px 48px 64px;
+  border-right: 1px solid var(--rule);
+  padding: 64px 56px 70px 48px;
 }
-.contact-inner {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
+.contact-right-pane {
+  background: var(--cream);
+  padding: 64px 48px 70px;
 }
-.contact-title {
+.contact-kicker {
   font-size: 0.6rem;
-  font-weight: 300;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--terra);
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
-.contact-sub {
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+.contact-mini-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 26px;
+  margin-bottom: 14px;
 }
-.social-row { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
-.social-link {
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--terra-lt);
-  background: rgba(185,74,44,0.05);
+.contact-email-btn {
+  display: inline-block;
+  background: var(--terra);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+}
+.contact-email-btn:hover { background: var(--terra-dk); }
+.contact-note {
+  margin-top: 16px;
+  max-width: 520px;
+  color: var(--muted);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.02rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+.contact-fact {
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+  margin-top: 38px;
+}
+.contact-fact-title {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.contact-fact-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+.contact-fact-sub {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.contact-fact-sub em {
+  font-style: normal;
+  color: var(--terra);
+}
+.contact-section-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 18px 0 12px;
+}
+.contact-link-list {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-bottom: none;
+}
+.contact-link-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.2s ease;
+}
+.contact-link-card:hover { background: var(--parchment); }
+.contact-link-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: var(--parchment);
+  color: var(--terra);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  color: var(--terra-dk);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
 }
-.social-link:hover { background: rgba(185,74,44,0.16); }
-.social-link svg { width: 18px; height: 18px; fill: currentColor; }
-.social-labels { display: flex; justify-content: center; gap: 14px; margin-top: 10px; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
-.contact-strip {
-  border-top: 1px solid var(--rule);
-  background: var(--white);
-  padding: 28px 48px 34px;
+.contact-link-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
-.contact-page {
-  background: var(--cream);
-  padding: 56px 48px 72px;
-  min-height: calc(100vh - 64px);
-}
-.contact-page .contact-inner {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: left;
-}
-.contact-page-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.25rem;
-  line-height: 1.15;
+.contact-link-name {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 1.2;
   color: var(--ink);
-  margin: 8px 0 12px;
+  margin-bottom: 2px;
 }
-.contact-page-copy {
-  font-size: 0.92rem;
+.contact-link-meta {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
   color: var(--muted);
-  margin-bottom: 20px;
 }
-.contact-email {
-  display: inline-block;
-  margin-bottom: 24px;
-  color: var(--terra-dk);
-  text-decoration: none;
-  border-bottom: 1px solid var(--terra-lt);
-  padding-bottom: 2px;
+.contact-link-arrow {
+  color: #bfae9f;
+  font-size: 0.9rem;
 }
-.contact-email:hover { color: var(--terra); }
 .site-footer {
   background: var(--ink);
   border-top: 3px solid var(--terra);
@@ -510,6 +574,13 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .site-footer .footer-brand { margin-bottom: 8px; }
 .site-footer .footer-links a:hover { color: var(--terra-lt); }
 @media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-left-pane {
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+    padding: 44px 24px 50px;
+  }
+  .contact-right-pane { padding: 44px 24px 50px; }
   .site-footer { grid-template-columns: 1fr; }
 }
 </style>
@@ -589,7 +660,6 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   </nav>
   <div class="pub-hero" id="pub-top">
     <div>
-      <div class="pub-hero-label">Research Output</div>
       <h1 class="pub-hero-title">Publications &amp;<br>Scholarly Output</h1>
       <p class="pub-hero-sub">Peer-reviewed journal articles, book chapters, edited collections, theses, and commissioned outputs. The monograph is featured separately under Latest Book.</p>
     </div>
@@ -672,6 +742,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
       <div class="pub-bottom-nav">
         <a href="#" onclick="openPublications('pub-top'); return false;">Publications</a>
         <a href="#" onclick="openHome('home-top'); return false;">Home</a>
+        <a href="#" id="pub-bottom-top-link" class="hidden-inline" onclick="scrollToId('pub-top'); return false;">Back to Top</a>
       </div>
     </div>
   </div>
@@ -953,30 +1024,90 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
     </ul>
   </nav>
   <section class="contact-page">
-    <div class="contact-inner">
-      <div class="section-eyebrow">Contact</div>
-      <h2 class="contact-page-title">Connect with Dr Sid Mohandas</h2>
-      <p class="contact-page-copy">For collaborations, speaking invitations, research inquiries, and academic correspondence:</p>
-      <a class="contact-email" href="mailto:s.mohandas.16@ucl.ac.uk">s.mohandas.16@ucl.ac.uk</a>
-      <div class="social-row">
-        <a class="social-link" href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.8v2h.1c.53-1 1.84-2.1 3.8-2.1 4.06 0 4.8 2.67 4.8 6.1V23h-4v-7.1c0-1.7-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78V23h-4V8z"/></svg>
-        </a>
-        <a class="social-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm0 13L5 12.18V17c0 2.76 3.13 5 7 5s7-2.24 7-5v-4.82L12 16z"/></svg>
-        </a>
-        <a class="social-link" href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer" aria-label="Academia">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 22h3l2-4h8l2 4h3L12 2zm-2.5 12L12 8l2.5 6h-5z"/></svg>
-        </a>
-        <a class="social-link" href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm11.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
-        </a>
-        <a class="social-link" href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer" aria-label="X">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.4L6.3 22H3.2l7.3-8.4L1 2h6.3l4.4 5.8L18.9 2zm-1.1 18h1.7L6.2 3.9H4.4L17.8 20z"/></svg>
-        </a>
-        <a class="social-link" href="https://www.facebook.com/profile.php?id=100010096181324" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 9H16V6h-2.5C10.5 6 9 7.8 9 10.6V13H6v3h3v6h3v-6h3l1-3h-4v-2.2c0-1 .4-1.8 1.5-1.8z"/></svg>
-        </a>
+    <div class="contact-layout">
+      <div class="contact-left-pane">
+        <div class="contact-kicker">Direct Contact</div>
+        <div class="contact-mini-label">Email</div>
+        <a href="mailto:s.mohandas.16@ucl.ac.uk" class="contact-email-btn">Email Dr. Sid Mohandas</a>
+        <p class="contact-note">For research enquiries, collaborations, and speaking invitations. I endeavour to respond within 5 working days.</p>
+
+        <div class="contact-fact">
+          <div class="contact-fact-title">Primary Affiliation</div>
+          <div class="contact-fact-name">Middlesex University London</div>
+          <div class="contact-fact-sub">Faculty of Education, Health &amp; Social Sciences</div>
+        </div>
+
+        <div class="contact-fact">
+          <div class="contact-fact-title">Also Affiliated With</div>
+          <div class="contact-fact-name">UCL Institute of Education</div>
+          <div class="contact-fact-sub">Learning and Leadership</div>
+        </div>
+
+        <div class="contact-fact">
+          <div class="contact-fact-title">Location</div>
+          <div class="contact-fact-name">London, United Kingdom</div>
+          <div class="contact-fact-sub">PhD <em>&middot;</em> Gender Scholar <em>&middot;</em> More-than Human Research</div>
+        </div>
+      </div>
+
+      <div class="contact-right-pane">
+        <div class="contact-kicker">Profiles &amp; Social</div>
+
+        <div class="contact-section-label">Academic</div>
+        <div class="contact-link-list">
+          <a href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+            <span class="contact-link-icon">GS</span>
+            <span class="contact-link-main">
+              <span class="contact-link-name">Google Scholar</span>
+              <span class="contact-link-meta">120+ citations &middot; Sid Mohandas</span>
+            </span>
+            <span class="contact-link-arrow">&rarr;</span>
+          </a>
+          <a href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+            <span class="contact-link-icon">Ac</span>
+            <span class="contact-link-main">
+              <span class="contact-link-name">Academia.edu</span>
+              <span class="contact-link-meta">20 Papers &middot; 4,200 views &middot; mdx.academia.edu</span>
+            </span>
+            <span class="contact-link-arrow">&rarr;</span>
+          </a>
+          <a href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+            <span class="contact-link-icon">in</span>
+            <span class="contact-link-main">
+              <span class="contact-link-name">LinkedIn</span>
+              <span class="contact-link-meta">Dr Sid Mohandas</span>
+            </span>
+            <span class="contact-link-arrow">&rarr;</span>
+          </a>
+        </div>
+
+        <div class="contact-section-label">Social</div>
+        <div class="contact-link-list">
+          <a href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+            <span class="contact-link-icon">Ig</span>
+            <span class="contact-link-main">
+              <span class="contact-link-name">Instagram</span>
+              <span class="contact-link-meta">@drsidmohandas</span>
+            </span>
+            <span class="contact-link-arrow">&rarr;</span>
+          </a>
+          <a href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+            <span class="contact-link-icon">X</span>
+            <span class="contact-link-main">
+              <span class="contact-link-name">X · Twitter</span>
+              <span class="contact-link-meta">@drsmohandas</span>
+            </span>
+            <span class="contact-link-arrow">&rarr;</span>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100010096181324" target="_blank" rel="noopener noreferrer" class="contact-link-card">
+            <span class="contact-link-icon">Fb</span>
+            <span class="contact-link-main">
+              <span class="contact-link-name">Facebook</span>
+              <span class="contact-link-meta">Sid Mohandas</span>
+            </span>
+            <span class="contact-link-arrow">&rarr;</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1009,6 +1140,15 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 </div>
 
 <script>
+let activePubTab = 'all';
+
+function syncPubNavButtons() {
+  const bottomTopLink = document.getElementById('pub-bottom-top-link');
+  if (bottomTopLink) {
+    bottomTopLink.classList.toggle('hidden-inline', activePubTab !== 'extant');
+  }
+}
+
 function showPage(id, btn) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
@@ -1028,7 +1168,8 @@ function togglePubBackTop() {
 
   const isPubVisible = pubPage.classList.contains('active');
   const isLongScroll = window.scrollY > 340;
-  backTopBtn.classList.toggle('visible', isPubVisible && isLongScroll);
+  const isExtantTab = activePubTab === 'extant';
+  backTopBtn.classList.toggle('visible', isPubVisible && isLongScroll && isExtantTab);
 }
 
 function openHome(anchorId) {
@@ -1038,6 +1179,8 @@ function openHome(anchorId) {
 
 function openPublications(anchorId) {
   showPage('publications');
+  activePubTab = 'all';
+  syncPubNavButtons();
   const pubPage = document.getElementById('page-publications');
   if (pubPage) {
     pubPage.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1070,6 +1213,8 @@ function activatePubTab(btn, targetId) {
 }
 
 function switchPubTab(btn, tab) {
+  activePubTab = tab;
+  syncPubNavButtons();
   const row = btn.closest('.filter-row');
   if (row) row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
