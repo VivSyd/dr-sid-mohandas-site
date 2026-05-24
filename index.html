@@ -41,10 +41,33 @@ nav {
 .hero-roles { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--muted); margin-bottom: 36px; }
 .hero-bio { font-size: 0.92rem; line-height: 1.8; max-width: 420px; margin-bottom: 48px; }
 .hero-cta { display: flex; gap: 16px; align-items: center; }
+.hero-photo-frame {
+  margin-top: 14px;
+  width: min(460px, 92%);
+  border: 1px solid #2b2724;
+  box-shadow: 0 0 0 2px rgba(185,74,44,0.35), 0 16px 30px rgba(0,0,0,0.18);
+  background: #11100f;
+  padding: 8px;
+}
+.hero-photo {
+  width: 100%;
+  display: block;
+  filter: grayscale(100%) contrast(1.08) brightness(0.93);
+}
 .btn-primary { background: var(--terra); color: var(--white); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 13px 28px; text-decoration: none; display: inline-block; }
 .btn-primary:hover { background: var(--terra-dk); }
-.btn-ghost { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #6c6058; text-decoration: none; border-bottom: 1px solid #bfb3a6; padding-bottom: 2px; font-weight: 400; }
-.btn-ghost:hover { color: var(--terra); border-color: var(--terra); }
+.btn-ghost {
+  background: #3a2f29;
+  color: #f3e9dc;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #4a3a32;
+}
+.btn-ghost:hover { background: #4a3a32; color: #fff4e7; border-color: #5a463d; }
 
 .hero-right {
   background: var(--ink);
@@ -266,6 +289,9 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .bio-title { font-size: 1rem; font-weight: 400; color: var(--ink); }
 .bio-dates, .bio-place { font-size: 0.92rem; color: var(--muted); }
 .bio-desc { font-size: 0.92rem; line-height: 1.65; color: var(--ink); margin-top: 5px; max-width: 900px; }
+.bio-intro { max-width: 900px; margin-bottom: 10px; }
+.bio-intro p { font-size: 0.95rem; line-height: 1.85; color: var(--ink); margin-bottom: 16px; }
+.bio-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 22px; }
 .pub-list { padding: 0 48px; background: var(--cream); }
 .pub-list-section { padding: 48px 0; border-bottom: 1px solid var(--rule); }
 .pub-list-year { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--terra-lt); line-height: 1; margin-bottom: 32px; }
@@ -279,6 +305,46 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .pub-long h4 { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin: 30px 0 12px; text-decoration: underline; }
 .pub-long p { font-size: 0.86rem; line-height: 1.65; color: var(--ink); margin: 0 0 14px; }
 .pub-long em { font-family: 'Cormorant Garamond', serif; font-size: 1.03em; }
+.pub-block { display: block; }
+.pub-block.hidden { display: none; }
+.contact-section {
+  border-top: 1px solid var(--rule);
+  background: var(--white);
+  padding: 56px 48px 64px;
+}
+.contact-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+.contact-sub {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+.social-row { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.social-link {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--terra-lt);
+  background: rgba(185,74,44,0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--terra-dk);
+}
+.social-link:hover { background: rgba(185,74,44,0.16); }
+.social-link svg { width: 18px; height: 18px; fill: currentColor; }
+.social-labels { display: flex; justify-content: center; gap: 14px; margin-top: 10px; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
 </style>
 </head>
 <body>
@@ -296,7 +362,10 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
       <h1 class="hero-name">Dr. Sid<br><em>Mohandas</em></h1>
       <p class="hero-roles">Researcher · Practitioner</p>
       <p class="hero-bio"><strong>Dr Sid Mohandas</strong> is a Montessori practitioner and childhood studies scholar, whose research in early childhood employs feminist, decolonial, anticolonial and more-than-human approaches.</p>
-      <div class="hero-cta"><a href="#" class="btn-primary" onclick="openBookPage(); return false;">About the Book</a><a href="#" class="btn-ghost" onclick="openHome('about'); return false;">About Sid</a></div>
+      <div class="hero-cta"><a href="#" class="btn-primary" onclick="openBookPage(); return false;">Check Out My Book</a><a href="#" class="btn-ghost" onclick="openBioPage(); return false;">About Sid</a></div>
+      <div class="hero-photo-frame">
+        <img class="hero-photo" src="Dr. Sid Mohandas Research Files/Sid Mohandas wt Book.jpg" alt="Dr Sid Mohandas portrait">
+      </div>
     </div>
     <div class="hero-right">
       <div class="hero-book-bg"></div>
@@ -315,20 +384,29 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <div class="strip" id="research">
     <div class="strip-item">Bloomsbury Academic Author</div><div class="strip-item">Middlesex University London</div><div class="strip-item">BERJ Co-Editor</div><div class="strip-item">Australian Research Council</div><div class="strip-item">SAGE · Taylor &amp; Francis</div>
   </div>
-  <section class="about-section" id="about">
-    <div class="about-sidebar">
-      <div class="sidebar-label">Quick Profile</div><div class="sidebar-portrait"><img class="profile-photo" src="Dr. Sid Mohandas Research Files/Sid Mohandas wt Book.jpg" alt="Dr Sid Mohandas professional portrait"></div><p class="portrait-caption">Dr. Sid Mohandas · London, UK</p>
-      <ul class="sidebar-list"><li>Researcher and practitioner, London</li><li><a href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer">Middlesex / Academia Profile</a></li><li>Editorial Board, RERM Journal</li><li>Co-editor, BERJ Special Issue (forthcoming)</li><li>Commissioned Scholar, Australian Research Council</li><li>ORCID: 0000-0002-6134-0338</li></ul>
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+    <div class="section-eyebrow">Contact</div>
+    <h2 class="contact-title">Connect with Dr Sid Mohandas</h2>
+    <p class="contact-sub">Professional and social profiles</p>
+    <div class="social-row">
+      <a class="social-link" href="https://www.linkedin.com/in/dr-sid-mohandas-%F0%9F%8D%89-b52b3979/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38V8.5zM5.25 3A1.96 1.96 0 1 0 5.3 6.92 1.96 1.96 0 0 0 5.25 3zM20.44 13.37c0-3.45-1.84-5.06-4.3-5.06a3.72 3.72 0 0 0-3.36 1.85V8.5H9.4V20h3.38v-6.05c0-1.6.3-3.15 2.29-3.15 1.95 0 1.98 1.82 1.98 3.25V20h3.39v-6.63z"/></svg>
+      </a>
+      <a class="social-link" href="https://www.instagram.com/drsidmohandas" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2zm0 1.9A3.86 3.86 0 0 0 3.9 7.75v8.5A3.86 3.86 0 0 0 7.75 20.1h8.5a3.86 3.86 0 0 0 3.85-3.85v-8.5a3.86 3.86 0 0 0-3.85-3.85h-8.5zm8.87 1.42a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.9a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2z"/></svg>
+      </a>
+      <a class="social-link" href="https://x.com/drsmohandas?s=20" target="_blank" rel="noopener noreferrer" aria-label="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 3h2.87l-6.27 7.16L22.9 21h-5.8l-4.55-5.95L7.32 21H4.45l6.7-7.66L1.1 3h5.95l4.11 5.43L18.9 3zm-1.01 16.24h1.59L6.2 4.67H4.5l13.39 14.57z"/></svg>
+      </a>
+      <a class="social-link" href="https://www.facebook.com/profile.php?id=100010096181324" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.87.25-1.46 1.5-1.46h1.7V3.96c-.3-.04-1.32-.12-2.5-.12-2.48 0-4.18 1.5-4.18 4.3V10H7.2v3h2.82v8h3.48z"/></svg>
+      </a>
     </div>
-    <div class="about-main">
-      <div class="section-eyebrow">About</div>
-      <h2 class="section-heading">About Sid Mohandas</h2>
-      <p class="body-text">Dr Sid Mohandas is a Montessori practitioner and childhood studies scholar whose research in early childhood draws on feminist, decolonial, anticolonial and more-than-human approaches. They are based in London, UK.</p>
-      <p class="body-text">Sid's work investigates how gender is constructed and materialised, particularly within Montessori settings, drawing on feminist new materialisms, posthumanism, decolonial and anticolonial theory, and Dalit feminisms. Their research attends to how ordinary objects, spaces and everyday encounters in nursery life carry and produce gendered, racialised, classed and casted forces.</p>
-      <p class="body-text">Sid serves as an editorial board member for <em>Reconceptualizing Educational Research Methodology</em>, and is co-editor of a forthcoming special issue in the <em>British Educational Research Journal</em> on the state of gender(s), young people and education.</p>
-      <div class="research-tags"><span class="tag">Feminist New Materialism</span><span class="tag">Decolonial Theory</span><span class="tag">Early Childhood Education</span><span class="tag">Gender &amp; Identity</span><span class="tag">Posthumanism</span><span class="tag">Montessori</span></div>
+    <div class="social-labels"><span>LinkedIn</span><span>Instagram</span><span>X</span><span>Facebook</span></div>
     </div>
   </section>
+  
 </div>
 
 <div id="page-publications" class="page">
@@ -346,7 +424,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
     </div>
     <div class="pub-hero-stat"><span class="pub-hero-num"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">160</a></span><span class="pub-hero-numlabel"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar citations<br>(h-index 8)</a></span></div>
   </div>
-  <div class="filter-row"><button class="filter-btn active" onclick="activatePubTab(this, 'pub-top')">All</button><button class="filter-btn" onclick="openBookPage()">Books</button><button class="filter-btn" onclick="activatePubTab(this, 'extant-sec')">Journal Articles</button><button class="filter-btn" onclick="activatePubTab(this, 'bookchap-sec')">Book Chapters</button><button class="filter-btn" onclick="activatePubTab(this, 'edited-sec')">Edited Collections</button></div>
+  <div class="filter-row"><button class="filter-btn active" onclick="switchPubTab(this, 'all')">All</button><button class="filter-btn" onclick="openBookPage()">Latest Book</button><button class="filter-btn" onclick="switchPubTab(this, 'extant')">Extant Peer-Reviewed</button><button class="filter-btn" onclick="switchPubTab(this, 'inpress')">In Press &amp; Forthcoming Peer-Reviewed</button><button class="filter-btn" onclick="switchPubTab(this, 'research')">Research</button><button class="filter-btn" onclick="switchPubTab(this, 'misc')">Miscellaneous</button></div>
   <div class="featured-book">
     <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><img class="book-cover-img" src="Dr. Sid Mohandas Research Files/Sid Mohandas Book Cover.jpg" alt="Re-imagining Gender in the Early Childhood Workforce book cover"></a>
     <div>
@@ -365,53 +443,62 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <div class="pub-list" id="pub-list">
     <div class="pub-long">
       <h3>Publications (Articles, Chapters, and Outputs)</h3>
-      <h4 id="books-sec">Books</h4>
-      <p><strong>Featured separately:</strong> <em>Re-imagining Gender in the Early Childhood Workforce: Feminist and More-than-human Perspectives</em> (see <strong>Latest Book</strong> tab for details, excerpt, and buy links).</p>
+      <div class="pub-block" data-tab="all">
+        <h4>Books</h4>
+        <p><strong>Featured separately:</strong> <em>Re-imagining Gender in the Early Childhood Workforce: Feminist and More-than-human Perspectives</em> (see <strong>Latest Book</strong> tab for details, excerpt, and buy links).</p>
+      </div>
 
-      <h4 id="extant-sec">Extant Peer-Reviewed Publications</h4>
-      <p><strong>Mohandas, S. &amp; Osgood, J.</strong> (2025) Feminist Posthumanism. In E. Blair &amp; S. Deckman (eds) <em>The SAGE Encyclopedia of Education and Gender</em>. London: SAGE Publications.</p>
-      <p><strong>Osgood, J., Mohandas, S., de Rijke, V. &amp; Sinker, R.</strong> (2025) MESS: an interview with Jayne Osgood and Sid Mohandas. In de Rijke, V. &amp; Sinker, R. (eds) <em>Challenging Contemporary Thinking of Play</em>. New York: Springer.</p>
-      <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2025) How gender comes to matter: tracing matter, space, place, time and affect in early childhood research. In J. Prioletta, A. Davies &amp; K. Smith (eds) <em>Bloomsbury Handbook of Gender and Sexuality in Early Childhood</em>. London &amp; New York: Bloomsbury.</p>
-      <p><strong>Osgood, J., Mohandas, S., Forte, S. &amp; Barreiro, J.</strong> (2025) Beyond Anthropocentric Boundaries, Childing as an Embodied Kind of Praxis. <em>Matter: Journal of New Materialist Research</em>, 10, 1–19.</p>
-      <p><strong>Mohandas, S.</strong> (2024) Dalit lifeworlds at risk: When postcolonial critique fails. <em>Knowledge Cultures</em>, 12(2), 49–66.</p>
-      <p><strong>Mohandas, S.</strong> (2024) Transmogrifying blocks: endarkening gender in nursery encounters. In S. Gannon, A. Pasley &amp; J. Osgood (eds) <em>Gender Un/Bound: Traversing Educational Possibilities</em>. London: Routledge.</p>
-      <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2024) Childing: an Ecopedagogy of Refusal. <em>International Journal of Primary, Elementary and Early Years Education (Education 3–13)</em>.</p>
-      <p><strong>Osgood, J., Archer, N., Albin-Clark, J. &amp; Mohandas, S.</strong> (eds) (2024) Bewildering early childhood ‘pioneers’ [Special Issue]. <em>Pedagogy, Culture &amp; Society</em>, 32(4), 875–883.</p>
-      <p><strong>Mohandas, S. &amp; Osgood, J.</strong> (2023) Feminist New Materialist Approaches to Childhood Studies. In H. Montgomery (ed.) <em>Oxford Bibliographies</em>. New York: Oxford University Press.</p>
-      <p><strong>Mohandas, S.</strong> (2023) Montessori Education and Gender: Recasting gender in Montessori contexts. In A. Murray et al. (eds) <em>Bloomsbury Handbook of Montessori Education</em>. London: Bloomsbury.</p>
-      <p><strong>Mohandas, S.</strong> (2023) Play from around three years to four years [video contribution]. In J. Harding (ed.) <em>The Brain that Loves to Play</em>. London: Routledge.</p>
-      <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2022) Grappling with the Miseducation of Montessori: a feminist posthuman re-reading of ‘child’ in early childhood contexts. <em>Contemporary Issues in Early Childhood</em>. DOI: 10.1177/14639491221117222.</p>
-      <p><strong>Mohandas, S.</strong> (2022) Beyond male recruitment: decolonising gender diversification efforts in the early years by attending to pastpresent material-discursive-affective entanglements. <em>Gender &amp; Education</em>. DOI: 10.1080/09540253.2021.1884202.</p>
-      <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2021) Figuring gender in early childhood with animal figurines: pursuing tentacular stories about global childhoods in the Anthropocene. In N. Yelland et al. (eds) <em>Global Childhoods Handbook</em>. London: SAGE Publications.</p>
-      <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2019) Reconfiguring the ‘Male Montessorian’: the mattering of gender through pink towering practices. <em>Early Years</em>. DOI: 10.1080/09575146.2019.1620181.</p>
+      <div class="pub-block" data-tab="extant all" id="extant-sec">
+        <h4>Extant Peer-Reviewed Publications</h4>
+        <p><strong>Mohandas, S. &amp; Osgood, J.</strong> (2025) Feminist Posthumanism. In E. Blair &amp; S. Deckman (eds) <em>The SAGE Encyclopedia of Education and Gender</em>. London: SAGE Publications.</p>
+        <p><strong>Osgood, J., Mohandas, S., de Rijke, V. &amp; Sinker, R.</strong> (2025) MESS: an interview with Jayne Osgood and Sid Mohandas. In de Rijke, V. &amp; Sinker, R. (eds) <em>Challenging Contemporary Thinking of Play</em>. New York: Springer.</p>
+        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2025) How gender comes to matter: tracing matter, space, place, time and affect in early childhood research. In J. Prioletta, A. Davies &amp; K. Smith (eds) <em>Bloomsbury Handbook of Gender and Sexuality in Early Childhood</em>. London &amp; New York: Bloomsbury.</p>
+        <p><strong>Osgood, J., Mohandas, S., Forte, S. &amp; Barreiro, J.</strong> (2025) Beyond Anthropocentric Boundaries, Childing as an Embodied Kind of Praxis. <em>Matter: Journal of New Materialist Research</em>, 10, 1–19.</p>
+        <p><strong>Mohandas, S.</strong> (2024) Dalit lifeworlds at risk: When postcolonial critique fails. <em>Knowledge Cultures</em>, 12(2), 49–66.</p>
+        <p><strong>Mohandas, S.</strong> (2024) Transmogrifying blocks: endarkening gender in nursery encounters. In S. Gannon, A. Pasley &amp; J. Osgood (eds) <em>Gender Un/Bound: Traversing Educational Possibilities</em>. London: Routledge.</p>
+        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2024) Childing: an Ecopedagogy of Refusal. <em>International Journal of Primary, Elementary and Early Years Education (Education 3–13)</em>.</p>
+        <p><strong>Osgood, J., Archer, N., Albin-Clark, J. &amp; Mohandas, S.</strong> (eds) (2024) Bewildering early childhood ‘pioneers’ [Special Issue]. <em>Pedagogy, Culture &amp; Society</em>, 32(4), 875–883.</p>
+        <p><strong>Mohandas, S. &amp; Osgood, J.</strong> (2023) Feminist New Materialist Approaches to Childhood Studies. In H. Montgomery (ed.) <em>Oxford Bibliographies</em>. New York: Oxford University Press.</p>
+        <p><strong>Mohandas, S.</strong> (2023) Montessori Education and Gender: Recasting gender in Montessori contexts. In A. Murray et al. (eds) <em>Bloomsbury Handbook of Montessori Education</em>. London: Bloomsbury.</p>
+        <p><strong>Mohandas, S.</strong> (2023) Play from around three years to four years [video contribution]. In J. Harding (ed.) <em>The Brain that Loves to Play</em>. London: Routledge.</p>
+        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2022) Grappling with the Miseducation of Montessori: a feminist posthuman re-reading of ‘child’ in early childhood contexts. <em>Contemporary Issues in Early Childhood</em>. DOI: 10.1177/14639491221117222.</p>
+        <p><strong>Mohandas, S.</strong> (2022) Beyond male recruitment: decolonising gender diversification efforts in the early years by attending to pastpresent material-discursive-affective entanglements. <em>Gender &amp; Education</em>. DOI: 10.1080/09540253.2021.1884202.</p>
+        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2021) Figuring gender in early childhood with animal figurines: pursuing tentacular stories about global childhoods in the Anthropocene. In N. Yelland et al. (eds) <em>Global Childhoods Handbook</em>. London: SAGE Publications.</p>
+        <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2019) Reconfiguring the ‘Male Montessorian’: the mattering of gender through pink towering practices. <em>Early Years</em>. DOI: 10.1080/09575146.2019.1620181.</p>
+      </div>
 
-      <h4 id="edited-sec">In Press and Forthcoming Peer-Reviewed Publications</h4>
-      <p><strong>Bragg, S., Marston, K., Mohandas, S., Osgood, J. &amp; Renold, E.</strong> (eds) (2026, forthcoming) The state of gender, young people, and education: inequities, inter/intrasectionality and inclusivity [Special Issue]. <em>British Education Research Journal</em>.</p>
-      <p><strong>Mohandas, S.</strong> (2026, forthcoming) Tending the tea dragons. In S. Truman (ed.) <em>Transdisciplinary Engagements with SF</em>. London: Bloomsbury.</p>
-      <p><strong>Mohandas, S.</strong> (2026) Re-encountering gender in the early childhood workforce. In L. Knight &amp; A. Longley (eds) <em>Art, Connection, and Creative Encounters: Mapping Social Imaginaries in Uncertain Times</em>.</p>
+      <div class="pub-block" data-tab="inpress all" id="inpress-sec">
+        <h4>In Press and Forthcoming Peer-Reviewed Publications</h4>
+        <p><strong>Bragg, S., Marston, K., Mohandas, S., Osgood, J. &amp; Renold, E.</strong> (eds) (2026, forthcoming) The state of gender, young people, and education: inequities, inter/intrasectionality and inclusivity [Special Issue]. <em>British Education Research Journal</em>.</p>
+        <p><strong>Mohandas, S.</strong> (2026, forthcoming) Tending the tea dragons. In S. Truman (ed.) <em>Transdisciplinary Engagements with SF</em>. London: Bloomsbury.</p>
+        <p><strong>Mohandas, S.</strong> (2026) Re-encountering gender in the early childhood workforce. In L. Knight &amp; A. Longley (eds) <em>Art, Connection, and Creative Encounters: Mapping Social Imaginaries in Uncertain Times</em>.</p>
+      </div>
 
-      <h4 id="bookchap-sec">Doctoral Thesis</h4>
-      <p><strong>Mohandas, S.</strong> (2023) <em>Gendered forces at work: tentacular stories from the nursery</em>. Doctoral dissertation, Middlesex University.</p>
+      <div class="pub-block" data-tab="research all" id="research-sec">
+        <h4>Research</h4>
+        <p><strong>Doctoral Thesis</strong><br>Mohandas, S. (2023) <em>Gendered forces at work: tentacular stories from the nursery</em>. Doctoral dissertation, Middlesex University.</p>
+        <p><strong>Commissioned Research Consultancy and Outputs</strong></p>
+        <p>2025–2026 Commissioned Researcher, Maria Montessori in India – Immersive Walk-Through. The Montessori Event 2026.</p>
+        <p>2023–2024 Commissioned Scholar, Australian Research Council (ARC) project ‘Transdisciplinary Engagements with Speculative/Science Fiction’, led by Dr Sarah E. Truman.</p>
+        <p>2022 Commissioned Researcher, ‘The State of UK Boys’, Equimundo, with Dr Sara Bragg, Dr Jessica Ringrose, and Idil Cambazoglu.</p>
+        <p>Bragg, S., Ringrose, J., Mohandas, S. et al. (2022) <em>The State of UK Boys: Understanding and Transforming Gender in the Lives of UK Boys</em>. Washington, DC: Equimundo.</p>
+        <p>Bragg, S., Ringrose, J., Mohandas, S. et al. (2022) <em>The State of UK Boys: An Urgent Call for Connected, Caring Boyhoods</em>. Washington, DC: Equimundo.</p>
+      </div>
 
-      <h4>Commissioned Research Consultancy and Outputs</h4>
-      <p><strong>2025–2026</strong> Commissioned Researcher, Maria Montessori in India – Immersive Walk-Through. The Montessori Event 2026.</p>
-      <p><strong>2023–2024</strong> Commissioned Scholar, Australian Research Council (ARC) project ‘Transdisciplinary Engagements with Speculative/Science Fiction’, led by Dr Sarah E. Truman.</p>
-      <p><strong>2022</strong> Commissioned Researcher, ‘The State of UK Boys’, Equimundo, with Dr Sara Bragg, Dr Jessica Ringrose, and Idil Cambazoglu.</p>
-      <p><strong>Bragg, S., Ringrose, J., Mohandas, S. et al.</strong> (2022) <em>The State of UK Boys: Understanding and Transforming Gender in the Lives of UK Boys</em>. Washington, DC: Equimundo.</p>
-      <p><strong>Bragg, S., Ringrose, J., Mohandas, S. et al.</strong> (2022) <em>The State of UK Boys: An Urgent Call for Connected, Caring Boyhoods</em>. Washington, DC: Equimundo.</p>
-
-      <h4>Miscellaneous Publications</h4>
-      <p><strong>Mohandas, S.</strong> (2025) Stretching time: A Neurodiversity Perspective on Caring Differently. <em>Tapestry</em>.</p>
-      <p><strong>Mohandas, S.</strong> (2024) Looking around: a more-than-human sense of belonging. <em>Direction</em>. London: AMI UK.</p>
-      <p><strong>Mohandas, S.</strong> (2023) Transforming practice: A critical interrogation of Montessori. <em>Montessori Life</em>. New York: AMS.</p>
-      <p><strong>Mohandas, S.</strong> (2023) Montessori and Disability. In <em>Equity Examined: How to Design Schools and Education Programs Where Everyone Thrives</em>. New York: AMS.</p>
-      <p><strong>Allen, A., Gerker, H., Wood, K.K., Mohandas, S. et al.</strong> (2023) Innovation: Reflections from the Field. <em>Montessori Life</em>. New York: AMS.</p>
-      <p><strong>Mohandas, S. &amp; Awdry, C.</strong> (2022) Interview with Sid Mohandas. In C. Awdry (ed.) <em>The Montessori Mission: Diversity–Wisdom–Reflection</em>, 155–172. Dubai: Enriching Environments.</p>
-      <p><strong>Pasley, A. &amp; Mohandas, S.</strong> (2021) Interview with And Pasley on Gender Pronouns. <em>LGBTQIA+ Early Years Magazine</em>, Issue 1, 8–9.</p>
-      <p><strong>Mohandas, S. &amp; Morgan Herman, J.</strong> (2020) Maria Montessori: A Life in Pictures and Writings. <em>Montessori Life</em>, 32(2), 34–35.</p>
-      <p><strong>Mohandas, S.</strong> (2020) Reclaiming feminisms in the early years. <em>Montessori International</em>, Issue 127, Spring 2020. London: Montessori Centre International.</p>
-      <p><strong>Mohandas, S.</strong> (2018) Exploring Diversity and Inclusivity in Montessori. <em>Montessori Life</em>, 30(4), 34–35.</p>
-      <p><strong>Mohandas, S.</strong> (2015) Report on Museum of Childhood Event. <em>Montessori International</em>, Issue 117, Autumn 2015. London: Montessori St. Nicholas Charity.</p>
+      <div class="pub-block" data-tab="misc all" id="misc-sec">
+        <h4>Miscellaneous Publications</h4>
+        <p><strong>Mohandas, S.</strong> (2025) Stretching time: A Neurodiversity Perspective on Caring Differently. <em>Tapestry</em>.</p>
+        <p><strong>Mohandas, S.</strong> (2024) Looking around: a more-than-human sense of belonging. <em>Direction</em>. London: AMI UK.</p>
+        <p><strong>Mohandas, S.</strong> (2023) Transforming practice: A critical interrogation of Montessori. <em>Montessori Life</em>. New York: AMS.</p>
+        <p><strong>Mohandas, S.</strong> (2023) Montessori and Disability. In <em>Equity Examined: How to Design Schools and Education Programs Where Everyone Thrives</em>. New York: AMS.</p>
+        <p><strong>Allen, A., Gerker, H., Wood, K.K., Mohandas, S. et al.</strong> (2023) Innovation: Reflections from the Field. <em>Montessori Life</em>. New York: AMS.</p>
+        <p><strong>Mohandas, S. &amp; Awdry, C.</strong> (2022) Interview with Sid Mohandas. In C. Awdry (ed.) <em>The Montessori Mission: Diversity–Wisdom–Reflection</em>, 155–172. Dubai: Enriching Environments.</p>
+        <p><strong>Pasley, A. &amp; Mohandas, S.</strong> (2021) Interview with And Pasley on Gender Pronouns. <em>LGBTQIA+ Early Years Magazine</em>, Issue 1, 8–9.</p>
+        <p><strong>Mohandas, S. &amp; Morgan Herman, J.</strong> (2020) Maria Montessori: A Life in Pictures and Writings. <em>Montessori Life</em>, 32(2), 34–35.</p>
+        <p><strong>Mohandas, S.</strong> (2020) Reclaiming feminisms in the early years. <em>Montessori International</em>, Issue 127, Spring 2020. London: Montessori Centre International.</p>
+        <p><strong>Mohandas, S.</strong> (2018) Exploring Diversity and Inclusivity in Montessori. <em>Montessori Life</em>, 30(4), 34–35.</p>
+        <p><strong>Mohandas, S.</strong> (2015) Report on Museum of Childhood Event. <em>Montessori International</em>, Issue 117, Autumn 2015. London: Montessori St. Nicholas Charity.</p>
+      </div>
     </div>
   </div>
   <div id="contact" aria-hidden="true"></div>
@@ -475,6 +562,16 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
         <div class="bio-name">Dr Sid Mohandas</div>
         <div class="bio-role">decolonial scholar</div>
         <div class="bio-loc">London, England, United Kingdom</div>
+
+        <section class="bio-sec">
+          <h3>About Sid Mohandas</h3>
+          <div class="bio-intro">
+            <p>Dr Sid Mohandas is a Montessori practitioner and childhood studies scholar whose research in early childhood draws on feminist, decolonial, anticolonial and more-than-human approaches. They are based in London, UK.</p>
+            <p>Sid's work investigates how gender is constructed and materialised, particularly within Montessori settings, drawing on feminist new materialisms, posthumanism, decolonial and anticolonial theory, and Dalit feminisms. Their research attends to how ordinary objects, spaces and everyday encounters in nursery life carry and produce gendered, racialised, classed and casted forces.</p>
+            <p>Sid serves as an editorial board member for <em>Reconceptualizing Educational Research Methodology</em>, and is co-editor of a forthcoming special issue in the <em>British Educational Research Journal</em> on the state of gender(s), young people and education.</p>
+          </div>
+          <div class="bio-tags"><span class="tag">Feminist New Materialism</span><span class="tag">Decolonial Theory</span><span class="tag">Early Childhood Education</span><span class="tag">Gender &amp; Identity</span><span class="tag">Posthumanism</span><span class="tag">Montessori</span></div>
+        </section>
 
         <section class="bio-sec">
           <h3>Experience</h3>
@@ -549,6 +646,23 @@ function activatePubTab(btn, targetId) {
   if (row) row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   scrollToId(targetId);
+}
+
+function switchPubTab(btn, tab) {
+  const row = btn.closest('.filter-row');
+  if (row) row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const blocks = document.querySelectorAll('.pub-block');
+  blocks.forEach(block => {
+    const tags = (block.getAttribute('data-tab') || '').split(' ');
+    if (tab === 'all' || tags.includes(tab) || tags.includes('all')) {
+      block.classList.remove('hidden');
+    } else {
+      block.classList.add('hidden');
+    }
+  });
+  scrollToId('pub-list');
 }
 
 function openBookPage() {
