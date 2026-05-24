@@ -243,6 +243,29 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   background: rgba(255,255,255,0.35);
 }
 .book-nav-row a:hover { color: var(--terra); border-color: var(--terra-lt); }
+.bio-page { background: var(--cream); padding: 0; min-height: calc(100vh - 64px); }
+.bio-wrap { display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 64px); }
+.bio-sidebar {
+  background: var(--white);
+  color: var(--ink);
+  padding: 34px 22px;
+  border-right: 1px solid var(--rule);
+}
+.bio-side-title { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; margin-bottom: 14px; color: var(--ink); }
+.bio-side-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terra); margin: 22px 0 8px; }
+.bio-sidebar p, .bio-sidebar a { font-size: 0.86rem; line-height: 1.5; color: var(--muted); text-decoration: none; }
+.bio-sidebar a:hover { text-decoration: underline; }
+.bio-main { background: var(--cream); padding: 42px 36px 48px; }
+.bio-name { font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 1.02; margin-bottom: 8px; color: var(--ink); }
+.bio-role { font-size: 1.18rem; color: var(--muted); margin-bottom: 2px; }
+.bio-loc { color: var(--muted); margin-bottom: 22px; }
+.bio-sec { margin-top: 30px; max-width: 900px; }
+.bio-sec h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; line-height: 1.1; margin-bottom: 14px; color: var(--ink); }
+.bio-item { margin-bottom: 18px; }
+.bio-org { font-size: 1.18rem; color: var(--ink); }
+.bio-title { font-size: 1rem; font-weight: 400; color: var(--ink); }
+.bio-dates, .bio-place { font-size: 0.92rem; color: var(--muted); }
+.bio-desc { font-size: 0.92rem; line-height: 1.65; color: var(--ink); margin-top: 5px; max-width: 900px; }
 .pub-list { padding: 0 48px; background: var(--cream); }
 .pub-list-section { padding: 48px 0; border-bottom: 1px solid var(--rule); }
 .pub-list-year { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--terra-lt); line-height: 1; margin-bottom: 32px; }
@@ -264,7 +287,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <nav>
     <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" class="active" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+      <li><a href="#" class="active" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
     </ul>
   </nav>
   <section class="hero" id="home-top">
@@ -312,7 +335,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <nav>
     <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" class="active" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" class="active" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
     </ul>
   </nav>
   <div class="pub-hero" id="pub-top">
@@ -398,7 +421,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <nav>
     <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" class="active" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openBioPage(); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" class="active" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
     </ul>
   </nav>
   <section class="book-page">
@@ -424,6 +447,77 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
           <a href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer">Read Excerpt</a>
         </div>
       </div>
+    </div>
+  </section>
+</div>
+
+<div id="page-bio" class="page">
+  <nav>
+    <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" class="active" onclick="openBioPage(); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="bio-page">
+    <div class="bio-wrap">
+      <aside class="bio-sidebar">
+        <div class="bio-side-title">Dr Sid Mohandas</div>
+        <div class="bio-side-label">Contact</div>
+        <p><a href="https://www.linkedin.com/in/dr-sid-mohandas--b52b3979/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+        <p><a href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>
+        <p><a href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer">Middlesex / Academia</a></p>
+        <div class="bio-side-label">Top Skills</div>
+        <p>Peer Reviews<br>University Lecturing<br>Web Design</p>
+        <div class="bio-side-label">Selected Publications</div>
+        <p>Reconfiguring the ‘Male Montessorian’<br>Montessori and Disability<br>Bewildering early childhood pioneers<br>The State of UK Boys<br>Gendered forces at work</p>
+      </aside>
+      <main class="bio-main">
+        <div class="bio-name">Dr Sid Mohandas</div>
+        <div class="bio-role">decolonial scholar</div>
+        <div class="bio-loc">London, England, United Kingdom</div>
+
+        <section class="bio-sec">
+          <h3>Experience</h3>
+          <div class="bio-item">
+            <div class="bio-org">Leeds Beckett University</div>
+            <div class="bio-title">Guest Lecturer</div>
+            <div class="bio-dates">February 2024 - February 2024 (1 month)</div>
+            <div class="bio-desc">Teaching Contemporary Theoretical Lenses for the MA Montessori and Social Justice module.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Cardiff University / Prifysgol Caerdydd</div>
+            <div class="bio-title">Guest Lecturer</div>
+            <div class="bio-dates">February 2024 - February 2024 (1 month)</div>
+            <div class="bio-desc">Teaching More-than-human Childhoods for the BA Children and Childhood module.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">University of Melbourne</div>
+            <div class="bio-title">Commissioned Scholar</div>
+            <div class="bio-dates">November 2023 - February 2024 (4 months)</div>
+            <div class="bio-desc">Commissioned Scholar for the Australian Research Council (ARC) project led by Dr Sarah E. Truman.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Middlesex University</div>
+            <div class="bio-title">Research Assistant / Lecturer</div>
+            <div class="bio-dates">March 2020 - January 2024</div>
+            <div class="bio-desc">Research-led teaching and research coordination across early childhood and gender-related projects.</div>
+          </div>
+          <div class="bio-item">
+            <div class="bio-org">Montessori Global Education</div>
+            <div class="bio-title">Tutor / Guest Lecturer</div>
+            <div class="bio-dates">October 2018 - June 2021</div>
+            <div class="bio-desc">Supported modules in Gender Diversity and Massive Open Online Courses on Montessori and Gender &amp; Sexuality in Early Years.</div>
+          </div>
+        </section>
+
+        <section class="bio-sec">
+          <h3>Education</h3>
+          <div class="bio-item"><div class="bio-org">Middlesex University</div><div class="bio-title">Doctor of Philosophy (PhD)</div><div class="bio-dates">September 2018 - September 2023</div></div>
+          <div class="bio-item"><div class="bio-org">UCL Institute of Education</div><div class="bio-title">Master’s Degree, Early Childhood Education and Teaching</div><div class="bio-dates">2016 - 2017</div></div>
+          <div class="bio-item"><div class="bio-org">London Metropolitan University</div><div class="bio-title">FDA, Early Childhood Education and Teaching</div></div>
+          <div class="bio-item"><div class="bio-org">Montessori Centre International</div><div class="bio-title">Diploma, Montessori Teacher Education</div></div>
+        </section>
+      </main>
     </div>
   </section>
 </div>
@@ -459,6 +553,10 @@ function activatePubTab(btn, targetId) {
 
 function openBookPage() {
   showPage('book');
+}
+
+function openBioPage() {
+  showPage('bio');
 }
 </script>
 </body>
