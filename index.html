@@ -15,25 +15,11 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 body { background: var(--cream); color: var(--ink); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
 
-/* Top switcher */
-.demo-bar {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: var(--ink); display: flex; align-items: center; padding: 0 24px; height: 44px;
-}
-.demo-label { font-size: 0.62rem; font-weight: 200; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-right: 20px; }
-.demo-btn {
-  background: none; border: none; font-family: 'Jost', sans-serif; font-size: 0.65rem; font-weight: 300;
-  letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5);
-  padding: 0 18px; height: 44px; cursor: pointer; border-bottom: 2px solid transparent;
-}
-.demo-btn.active { color: var(--terra-lt); border-bottom-color: var(--terra); }
-.demo-btn:hover:not(.active) { color: rgba(255,255,255,0.8); }
-
-.page { display: none; padding-top: 44px; }
+.page { display: none; padding-top: 0; }
 .page.active { display: block; }
 
 nav {
-  position: sticky; top: 44px; z-index: 100; background: var(--cream); border-bottom: 1px solid var(--rule);
+  position: sticky; top: 0; z-index: 100; background: var(--cream); border-bottom: 1px solid var(--rule);
   display: flex; align-items: center; justify-content: space-between; padding: 0 48px; height: 64px;
 }
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.1rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
@@ -41,7 +27,7 @@ nav {
 .nav-links a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
 .nav-links a:hover, .nav-links a.active { color: var(--terra); }
 
-.hero { display: grid; grid-template-columns: 1fr 1fr; height: calc(100vh - 108px); min-height: 600px; }
+.hero { display: grid; grid-template-columns: 1fr 1fr; height: calc(100vh - 64px); min-height: 600px; }
 .hero-left { background: var(--parchment); padding: 80px 64px 80px 48px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
 .hero-left::after { content: ''; position: absolute; bottom: -60px; right: -60px; width: 240px; height: 240px; border-radius: 50%; border: 1px solid var(--terra-lt); opacity: 0.5; }
 .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terra); margin-bottom: 28px; }
@@ -59,7 +45,7 @@ nav {
   background: var(--ink);
   position: relative;
   overflow: hidden;
-  min-height: calc(100vh - 108px);
+  min-height: calc(100vh - 64px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -162,12 +148,6 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 </style>
 </head>
 <body>
-<div class="demo-bar">
-  <span class="demo-label">Mockup</span>
-  <button class="demo-btn active" onclick="showPage('home', this)">Homepage</button>
-  <button class="demo-btn" onclick="showPage('publications', this)">Publications</button>
-</div>
-
 <div id="page-home" class="page active">
   <nav>
     <a href="#" class="nav-logo">Dr. Sid Mohandas</a>
@@ -252,9 +232,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 <script>
 function showPage(id, btn) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.demo-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
-  if (btn) btn.classList.add('active');
   window.scrollTo(0, 0);
 }
 </script>
