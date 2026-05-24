@@ -156,18 +156,18 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 <div class="top-accent" aria-hidden="true"></div>
 <div id="page-home" class="page active">
   <nav>
-    <a href="#" class="nav-logo">Dr. Sid Mohandas</a>
+    <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" class="active">Home</a></li><li><a href="#">About</a></li><li><a href="#">Research</a></li><li><a href="#">Publications</a></li><li><a href="#">Teaching</a></li><li><a href="#">Contact</a></li>
+      <li><a href="#" class="active" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openPublications('pub-list'); return false;">Teaching</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
     </ul>
   </nav>
-  <section class="hero">
+  <section class="hero" id="home-top">
     <div class="hero-left">
       <div class="hero-eyebrow">Middlesex University London</div>
       <h1 class="hero-name">Dr. Sid<br><em>Mohandas</em></h1>
       <p class="hero-roles">Researcher · Practitioner</p>
-      <p class="hero-bio">A childhood studies scholar whose work sits at the intersection of feminist theory, decolonial thinking, and early education.</p>
-      <div class="hero-cta"><a href="#" class="btn-primary">View Publications</a><a href="#" class="btn-ghost">About Sid</a></div>
+      <p class="hero-bio"><strong>Dr Sid Mohandas</strong> is a Montessori practitioner and childhood studies scholar, whose research in early childhood employs feminist, decolonial, anticolonial and more-than-human approaches.</p>
+      <div class="hero-cta"><a href="#" class="btn-primary" onclick="openPublications('pub-top'); return false;">View Publications</a><a href="#" class="btn-ghost" onclick="openHome('about'); return false;">About Sid</a></div>
     </div>
     <div class="hero-right">
       <div class="hero-book-bg"></div>
@@ -183,17 +183,17 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
       </div>
     </div>
   </section>
-  <div class="strip">
+  <div class="strip" id="research">
     <div class="strip-item">Bloomsbury Academic Author</div><div class="strip-item">Middlesex University London</div><div class="strip-item">BERJ Co-Editor</div><div class="strip-item">Australian Research Council</div><div class="strip-item">SAGE · Taylor &amp; Francis</div>
   </div>
-  <section class="about-section">
+  <section class="about-section" id="about">
     <div class="about-sidebar">
       <div class="sidebar-label">Quick Profile</div><div class="sidebar-portrait"><span class="portrait-placeholder">S</span></div><p class="portrait-caption">Dr. Sid Mohandas · London, UK</p>
       <ul class="sidebar-list"><li>Researcher and practitioner, London</li><li>Doctoral researcher, Middlesex University</li><li>Editorial Board, RERM Journal</li><li>Co-editor, BERJ Special Issue (forthcoming)</li><li>Commissioned Scholar, Australian Research Council</li><li>ORCID: 0000-0002-6134-0338</li></ul>
     </div>
     <div class="about-main">
       <div class="section-eyebrow">About</div>
-      <h2 class="section-heading">Dr Sid Mohandas</h2>
+      <h2 class="section-heading">About Sid Mohandas</h2>
       <p class="body-text">Dr Sid Mohandas is a Montessori practitioner and childhood studies scholar whose research in early childhood draws on feminist, decolonial, anticolonial and more-than-human approaches. They are based in London, UK.</p>
       <p class="body-text">Sid's work investigates how gender is constructed and materialised, particularly within Montessori settings, drawing on feminist new materialisms, posthumanism, decolonial and anticolonial theory, and Dalit feminisms. Their research attends to how ordinary objects, spaces and everyday encounters in nursery life carry and produce gendered, racialised, classed and casted forces.</p>
       <p class="body-text">Sid serves as an editorial board member for <em>Reconceptualizing Educational Research Methodology</em>, and is co-editor of a forthcoming special issue in the <em>British Educational Research Journal</em> on the state of gender(s), young people and education.</p>
@@ -204,12 +204,12 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 
 <div id="page-publications" class="page">
   <nav>
-    <a href="#" class="nav-logo">Dr. Sid Mohandas</a>
+    <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li><li><a href="#">About</a></li><li><a href="#">Research</a></li><li><a href="#" class="active">Publications</a></li><li><a href="#">Teaching</a></li><li><a href="#">Contact</a></li>
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" class="active" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openPublications('pub-list'); return false;">Teaching</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
     </ul>
   </nav>
-  <div class="pub-hero">
+  <div class="pub-hero" id="pub-top">
     <div>
       <div class="pub-hero-label">Research Output</div>
       <h1 class="pub-hero-title">Publications &amp;<br>Scholarship</h1>
@@ -228,11 +228,12 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
       <div class="featured-meta"><div class="meta-item"><strong>Publisher</strong>Bloomsbury Academic</div><div class="meta-item"><strong>Series</strong>Feminist Thought in Childhood Research</div><div class="meta-item"><strong>Year</strong>2026</div></div>
     </div>
   </div>
-  <div class="pub-list">
+  <div class="pub-list" id="pub-list">
     <div class="pub-list-section"><div class="pub-list-year">2025</div><div class="pub-entry"><span class="pub-num">1</span><div><div class="pub-entry-title">Beyond Anthropocentric Boundaries, Childing as an Embodied Kind of Praxis</div><div class="pub-entry-meta"><span>Matter: Journal of New Materialist Research</span><span class="pub-journal-tag">Journal Article</span></div></div></div></div>
     <div class="pub-list-section"><div class="pub-list-year">2024</div><div class="pub-entry"><span class="pub-num">2</span><div><div class="pub-entry-title">Dalit lifeworlds at risk: When postcolonial critique fails</div><div class="pub-entry-meta"><span>Knowledge Cultures</span><span class="pub-journal-tag">Journal Article</span></div></div></div></div>
     <div class="pub-list-section"><div class="pub-list-year">2022</div><div class="pub-entry"><span class="pub-num">3</span><div><div class="pub-entry-title">Grappling with the Miseducation of Montessori: a feminist posthuman re-reading of 'child'</div><div class="pub-entry-meta"><span>Contemporary Issues in Early Childhood</span><span class="pub-journal-tag">Peer-reviewed</span></div></div></div></div>
   </div>
+  <div id="contact" aria-hidden="true"></div>
 </div>
 
 <script>
@@ -240,6 +241,21 @@ function showPage(id, btn) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   window.scrollTo(0, 0);
+}
+
+function scrollToId(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function openHome(anchorId) {
+  showPage('home');
+  if (anchorId) setTimeout(() => scrollToId(anchorId), 20);
+}
+
+function openPublications(anchorId) {
+  showPage('publications');
+  if (anchorId) setTimeout(() => scrollToId(anchorId), 20);
 }
 </script>
 </body>
