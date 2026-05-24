@@ -43,7 +43,7 @@ nav {
 .hero-cta { display: flex; gap: 16px; align-items: center; }
 .btn-primary { background: var(--terra); color: var(--white); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 13px 28px; text-decoration: none; display: inline-block; }
 .btn-primary:hover { background: var(--terra-dk); }
-.btn-ghost { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+.btn-ghost { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: #6c6058; text-decoration: none; border-bottom: 1px solid #bfb3a6; padding-bottom: 2px; font-weight: 400; }
 .btn-ghost:hover { color: var(--terra); border-color: var(--terra); }
 
 .hero-right {
@@ -84,6 +84,10 @@ nav {
 .book-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; line-height: 1.2; color: var(--white); margin-bottom: 10px; max-width: 360px; }
 .book-sub { font-size: 0.8rem; font-style: italic; color: rgba(255,255,255,0.45); margin-bottom: 20px; font-family: 'Cormorant Garamond', serif; }
 .book-publisher { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra-lt); opacity: 0.6; }
+.book-link { color: inherit; text-decoration: none; display: inline-block; }
+.book-link:hover { text-decoration: underline; text-decoration-color: rgba(255,255,255,0.35); }
+.inline-link { color: inherit; text-decoration: none; }
+.inline-link:hover { text-decoration: underline; }
 
 .strip { background: var(--terra); padding: 18px 48px; display: flex; gap: 48px; overflow: hidden; }
 .strip-item { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.75); white-space: nowrap; }
@@ -91,8 +95,26 @@ nav {
 .about-section { display: grid; grid-template-columns: 340px 1fr; border-top: 1px solid var(--rule); }
 .about-sidebar { background: var(--white); padding: 64px 40px; border-right: 1px solid var(--rule); }
 .sidebar-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 32px; }
-.sidebar-portrait { width: 160px; height: 200px; background: var(--parchment); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; margin-bottom: 28px; }
+.sidebar-portrait {
+  width: 180px;
+  height: 220px;
+  background: #121110;
+  border: 1px solid #2a2724;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  padding: 10px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.22);
+}
 .portrait-placeholder { font-family: 'Cormorant Garamond', serif; font-size: 4rem; color: var(--terra-lt); font-style: italic; }
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%) contrast(1.08) brightness(0.94);
+}
 .portrait-caption { font-size: 0.62rem; color: var(--muted); font-style: italic; margin-bottom: 32px; font-family: 'Cormorant Garamond', serif; }
 .sidebar-list { list-style: none; }
 .sidebar-list li { font-size: 0.78rem; color: var(--muted); padding: 8px 0; border-bottom: 1px solid var(--rule); }
@@ -135,6 +157,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .book-cover-block { width: 180px; height: 240px; background: var(--terra); display: flex; flex-direction: column; justify-content: flex-end; padding: 20px 16px; }
 .book-cover-series { font-size: 0.5rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
 .book-cover-title { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--white); line-height: 1.25; }
+.book-cover-img { width: 180px; height: 240px; object-fit: cover; display: block; }
 .featured-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra-lt); opacity: 0.6; margin-bottom: 20px; }
 .featured-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--white); line-height: 1.2; margin-bottom: 8px; }
 .featured-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
@@ -142,6 +165,84 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
 .featured-meta { display: flex; gap: 24px; flex-wrap: wrap; }
 .meta-item { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
 .meta-item strong { display: block; color: var(--terra-lt); font-weight: 300; margin-bottom: 2px; }
+.buy-links { margin-top: 16px; font-size: 0.72rem; color: rgba(255,255,255,0.7); }
+.buy-links a { color: var(--terra-lt); text-decoration: none; margin-right: 14px; }
+.buy-links a:hover { text-decoration: underline; }
+.book-page {
+  background: var(--cream);
+  padding: 56px 48px 70px;
+}
+.book-page-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.book-photo-frame {
+  position: relative;
+  border: 1px solid #2d2a27;
+  background: #0f0e0d;
+  padding: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+.book-photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255,255,255,0.06);
+  pointer-events: none;
+}
+.book-photo {
+  width: 100%;
+  display: block;
+  filter: grayscale(100%) contrast(1.05) brightness(0.92);
+}
+.book-page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.35rem;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.book-page-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1.08rem;
+  margin-bottom: 18px;
+}
+.book-page-copy { font-size: 0.93rem; line-height: 1.8; margin-bottom: 14px; max-width: 620px; }
+.book-links-row { margin-top: 16px; }
+.book-links-row a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  border: 1px solid var(--terra-lt);
+  padding: 8px 12px;
+  text-decoration: none;
+  color: var(--terra-dk);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(185,74,44,0.04);
+}
+.book-links-row a:hover { background: rgba(185,74,44,0.12); }
+.book-nav-row { margin: 6px 0 18px; }
+.book-nav-row a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  padding: 7px 11px;
+  text-decoration: none;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid #ccb9aa;
+  color: #6b5d53;
+  background: rgba(255,255,255,0.35);
+}
+.book-nav-row a:hover { color: var(--terra); border-color: var(--terra-lt); }
 .pub-list { padding: 0 48px; background: var(--cream); }
 .pub-list-section { padding: 48px 0; border-bottom: 1px solid var(--rule); }
 .pub-list-year { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: var(--terra-lt); line-height: 1; margin-bottom: 32px; }
@@ -163,7 +264,7 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <nav>
     <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" class="active" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openPublications('pub-list'); return false;">Teaching</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+      <li><a href="#" class="active" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
     </ul>
   </nav>
   <section class="hero" id="home-top">
@@ -172,19 +273,19 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
       <h1 class="hero-name">Dr. Sid<br><em>Mohandas</em></h1>
       <p class="hero-roles">Researcher · Practitioner</p>
       <p class="hero-bio"><strong>Dr Sid Mohandas</strong> is a Montessori practitioner and childhood studies scholar, whose research in early childhood employs feminist, decolonial, anticolonial and more-than-human approaches.</p>
-      <div class="hero-cta"><a href="#" class="btn-primary" onclick="openPublications('pub-top'); return false;">View Publications</a><a href="#" class="btn-ghost" onclick="openHome('about'); return false;">About Sid</a></div>
+      <div class="hero-cta"><a href="#" class="btn-primary" onclick="openBookPage(); return false;">About the Book</a><a href="#" class="btn-ghost" onclick="openHome('about'); return false;">About Sid</a></div>
     </div>
     <div class="hero-right">
       <div class="hero-book-bg"></div>
       <div class="hero-stat-row">
-        <div><div class="hero-stat-num">160</div><div class="hero-stat-label">Google Scholar citations (all years)</div></div>
-        <div><div class="hero-stat-num">8</div><div class="hero-stat-label">Google Scholar h-index (all years)</div></div>
+        <div><div class="hero-stat-num"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">160</a></div><div class="hero-stat-label"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar citations (all years)</a></div></div>
+        <div><div class="hero-stat-num"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">8</a></div><div class="hero-stat-label"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar h-index (all years)</a></div></div>
       </div>
       <div class="hero-book-card">
         <div class="book-label">Latest Publication</div>
-        <div class="book-title">Re-Imagining Gender in the Early Childhood Workforce</div>
+        <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><div class="book-title">Re-Imagining Gender in the Early Childhood Workforce</div></a>
         <div class="book-sub">Feminist and More-than-human Perspectives</div>
-        <div class="book-publisher">Bloomsbury Academic · 2026</div>
+        <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><div class="book-publisher">Bloomsbury Academic · 2026 · View on ResearchGate</div></a>
       </div>
     </div>
   </section>
@@ -193,8 +294,8 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   </div>
   <section class="about-section" id="about">
     <div class="about-sidebar">
-      <div class="sidebar-label">Quick Profile</div><div class="sidebar-portrait"><span class="portrait-placeholder">S</span></div><p class="portrait-caption">Dr. Sid Mohandas · London, UK</p>
-      <ul class="sidebar-list"><li>Researcher and practitioner, London</li><li>Doctoral researcher, Middlesex University</li><li>Editorial Board, RERM Journal</li><li>Co-editor, BERJ Special Issue (forthcoming)</li><li>Commissioned Scholar, Australian Research Council</li><li>ORCID: 0000-0002-6134-0338</li></ul>
+      <div class="sidebar-label">Quick Profile</div><div class="sidebar-portrait"><img class="profile-photo" src="Dr. Sid Mohandas Research Files/Sid Mohandas wt Book.jpg" alt="Dr Sid Mohandas professional portrait"></div><p class="portrait-caption">Dr. Sid Mohandas · London, UK</p>
+      <ul class="sidebar-list"><li>Researcher and practitioner, London</li><li><a href="https://mdx.academia.edu/SidMohandas" target="_blank" rel="noopener noreferrer">Middlesex / Academia Profile</a></li><li>Editorial Board, RERM Journal</li><li>Co-editor, BERJ Special Issue (forthcoming)</li><li>Commissioned Scholar, Australian Research Council</li><li>ORCID: 0000-0002-6134-0338</li></ul>
     </div>
     <div class="about-main">
       <div class="section-eyebrow">About</div>
@@ -211,35 +312,40 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <nav>
     <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
     <ul class="nav-links">
-      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" class="active" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openPublications('pub-list'); return false;">Teaching</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" class="active" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
     </ul>
   </nav>
   <div class="pub-hero" id="pub-top">
     <div>
       <div class="pub-hero-label">Research Output</div>
-      <h1 class="pub-hero-title">Publications &amp;<br>Scholarship</h1>
-      <p class="pub-hero-sub">Peer-reviewed articles, book chapters, edited collections, and monographs spanning childhood studies, feminist theory, and decolonial research.</p>
+      <h1 class="pub-hero-title">Publications &amp;<br>Scholarly Output</h1>
+      <p class="pub-hero-sub">Peer-reviewed journal articles, book chapters, edited collections, theses, and commissioned outputs. The monograph is featured separately under Latest Book.</p>
     </div>
-    <div class="pub-hero-stat"><span class="pub-hero-num">160</span><span class="pub-hero-numlabel">Google Scholar citations<br>(h-index 8)</span></div>
+    <div class="pub-hero-stat"><span class="pub-hero-num"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">160</a></span><span class="pub-hero-numlabel"><a class="inline-link" href="https://scholar.google.com/citations?user=YIWC0toAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar citations<br>(h-index 8)</a></span></div>
   </div>
-  <div class="filter-row"><button class="filter-btn active">All</button><button class="filter-btn">Books</button><button class="filter-btn">Journal Articles</button><button class="filter-btn">Book Chapters</button><button class="filter-btn">Edited Collections</button></div>
+  <div class="filter-row"><button class="filter-btn active" onclick="activatePubTab(this, 'pub-top')">All</button><button class="filter-btn" onclick="openBookPage()">Books</button><button class="filter-btn" onclick="activatePubTab(this, 'extant-sec')">Journal Articles</button><button class="filter-btn" onclick="activatePubTab(this, 'bookchap-sec')">Book Chapters</button><button class="filter-btn" onclick="activatePubTab(this, 'edited-sec')">Edited Collections</button></div>
   <div class="featured-book">
-    <div class="book-cover-block"><div class="book-cover-series">Feminist Thought in Childhood Research</div><div class="book-cover-title">Re-Imagining Gender in the Early Childhood Workforce</div></div>
+    <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><img class="book-cover-img" src="Dr. Sid Mohandas Research Files/Sid Mohandas Book Cover.jpg" alt="Re-imagining Gender in the Early Childhood Workforce book cover"></a>
     <div>
       <div class="featured-label">Monograph · 2026</div>
-      <div class="featured-title">Re-Imagining Gender in the<br>Early Childhood Workforce</div>
+      <a class="book-link" href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer"><div class="featured-title">Re-Imagining Gender in the<br>Early Childhood Workforce</div></a>
       <div class="featured-subtitle">Feminist and More-than-human Perspectives</div>
       <p class="featured-desc">This book draws on feminist and more-than-human approaches to re-imagine gender in the early childhood workforce and foregrounds how gendered, racialised, classed and casted forces are produced through everyday nursery relations.</p>
       <div class="featured-meta"><div class="meta-item"><strong>Publisher</strong>Bloomsbury Academic</div><div class="meta-item"><strong>Series</strong>Feminist Thought in Childhood Research</div><div class="meta-item"><strong>Year</strong>2026</div></div>
+      <div class="buy-links">
+        <a href="https://www.bloomsbury.com/au/reimagining-gender-in-the-early-childhood-workforce-9781350534582/" target="_blank" rel="noopener noreferrer">Buy (AU)</a>
+        <a href="https://www.bloomsbury.com/uk/reimagining-gender-in-the-early-childhood-workforce-9781350534582/" target="_blank" rel="noopener noreferrer">Buy (UK)</a>
+        <a href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer">Excerpt / ResearchGate</a>
+      </div>
     </div>
   </div>
   <div class="pub-list" id="pub-list">
     <div class="pub-long">
-      <h3>Publications</h3>
-      <h4>Books</h4>
-      <p><strong>Mohandas, S.</strong> (2026, forthcoming) <em>Re-imagining Gender in the Early Childhood Workforce: Feminist and More-than-human Perspectives</em>. London: Routledge.</p>
+      <h3>Publications (Articles, Chapters, and Outputs)</h3>
+      <h4 id="books-sec">Books</h4>
+      <p><strong>Featured separately:</strong> <em>Re-imagining Gender in the Early Childhood Workforce: Feminist and More-than-human Perspectives</em> (see <strong>Latest Book</strong> tab for details, excerpt, and buy links).</p>
 
-      <h4>Extant Peer-Reviewed Publications</h4>
+      <h4 id="extant-sec">Extant Peer-Reviewed Publications</h4>
       <p><strong>Mohandas, S. &amp; Osgood, J.</strong> (2025) Feminist Posthumanism. In E. Blair &amp; S. Deckman (eds) <em>The SAGE Encyclopedia of Education and Gender</em>. London: SAGE Publications.</p>
       <p><strong>Osgood, J., Mohandas, S., de Rijke, V. &amp; Sinker, R.</strong> (2025) MESS: an interview with Jayne Osgood and Sid Mohandas. In de Rijke, V. &amp; Sinker, R. (eds) <em>Challenging Contemporary Thinking of Play</em>. New York: Springer.</p>
       <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2025) How gender comes to matter: tracing matter, space, place, time and affect in early childhood research. In J. Prioletta, A. Davies &amp; K. Smith (eds) <em>Bloomsbury Handbook of Gender and Sexuality in Early Childhood</em>. London &amp; New York: Bloomsbury.</p>
@@ -256,12 +362,12 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
       <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2021) Figuring gender in early childhood with animal figurines: pursuing tentacular stories about global childhoods in the Anthropocene. In N. Yelland et al. (eds) <em>Global Childhoods Handbook</em>. London: SAGE Publications.</p>
       <p><strong>Osgood, J. &amp; Mohandas, S.</strong> (2019) Reconfiguring the ‘Male Montessorian’: the mattering of gender through pink towering practices. <em>Early Years</em>. DOI: 10.1080/09575146.2019.1620181.</p>
 
-      <h4>In Press and Forthcoming Peer-Reviewed Publications</h4>
+      <h4 id="edited-sec">In Press and Forthcoming Peer-Reviewed Publications</h4>
       <p><strong>Bragg, S., Marston, K., Mohandas, S., Osgood, J. &amp; Renold, E.</strong> (eds) (2026, forthcoming) The state of gender, young people, and education: inequities, inter/intrasectionality and inclusivity [Special Issue]. <em>British Education Research Journal</em>.</p>
       <p><strong>Mohandas, S.</strong> (2026, forthcoming) Tending the tea dragons. In S. Truman (ed.) <em>Transdisciplinary Engagements with SF</em>. London: Bloomsbury.</p>
       <p><strong>Mohandas, S.</strong> (2026) Re-encountering gender in the early childhood workforce. In L. Knight &amp; A. Longley (eds) <em>Art, Connection, and Creative Encounters: Mapping Social Imaginaries in Uncertain Times</em>.</p>
 
-      <h4>Doctoral Thesis</h4>
+      <h4 id="bookchap-sec">Doctoral Thesis</h4>
       <p><strong>Mohandas, S.</strong> (2023) <em>Gendered forces at work: tentacular stories from the nursery</em>. Doctoral dissertation, Middlesex University.</p>
 
       <h4>Commissioned Research Consultancy and Outputs</h4>
@@ -288,6 +394,40 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   <div id="contact" aria-hidden="true"></div>
 </div>
 
+<div id="page-book" class="page">
+  <nav>
+    <a href="#" class="nav-logo" onclick="openHome('home-top'); return false;">Dr. Sid Mohandas</a>
+    <ul class="nav-links">
+      <li><a href="#" onclick="openHome('home-top'); return false;">Home</a></li><li><a href="#" onclick="openHome('about'); return false;">About</a></li><li><a href="#" onclick="openHome('research'); return false;">Research</a></li><li><a href="#" class="active" onclick="openBookPage(); return false;">Latest Book</a></li><li><a href="#" onclick="openPublications('pub-top'); return false;">Publications</a></li><li><a href="#" onclick="openHome('contact'); return false;">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="book-page">
+    <div class="book-page-wrap">
+      <div class="book-photo-frame">
+        <img class="book-photo" src="Dr. Sid Mohandas Research Files/Sid Mohandas Published Photo.png" alt="Dr Sid Mohandas holding Re-imagining Gender in the Early Childhood Workforce">
+      </div>
+      <div>
+        <div class="section-eyebrow">Latest Book</div>
+        <h2 class="book-page-title">Re-Imagining Gender in the Early Childhood Workforce</h2>
+        <div class="book-page-sub">Feminist and More-than-human Perspectives</div>
+        <div class="book-nav-row">
+          <a href="#" onclick="openPublications('pub-top'); return false;">Back to Publications</a>
+          <a href="#" onclick="openPublications('extant-sec'); return false;">Browse Journal Articles</a>
+          <a href="#" onclick="openHome('home-top'); return false;">Back to Home</a>
+        </div>
+        <p class="book-page-copy">This book draws on feminist and more-than-human approaches to re-imagine gender in the early childhood workforce. Debates, policies and practices around gender in the early childhood workforce have predominantly focused on the under-representation of men and the recuperative outcomes promised through the inclusion of men. Mohandas’ research is, however, concerned with the ways a gendered workforce can be re-imagined when the boundaries of research are stretched beyond mere human inclusion and attention is paid to ordinary objects and unassuming relations that constitute everyday life in the nursery.</p>
+        <p class="book-page-copy">Through an attunement to the atmospheric, a gendered workforce is re-conceptualised as gendered forces that work across bodies (human and nonhuman), spaces, places and temporalities. Through vignettes from the nursery, Mohandas makes visible how each encounter is composed of gendered and more-than-gendered (i.e. racialised, classed and casted) forces, relations, stories and worlds.</p>
+        <p class="book-page-copy">Series Editors: Jayne Osgood and Veronica Pacini-Ketchabaw.</p>
+        <div class="book-links-row">
+          <a href="https://www.bloomsbury.com/au/reimagining-gender-in-the-early-childhood-workforce-9781350534582/" target="_blank" rel="noopener noreferrer">Buy (AU)</a>
+          <a href="https://www.bloomsbury.com/uk/reimagining-gender-in-the-early-childhood-workforce-9781350534582/" target="_blank" rel="noopener noreferrer">Buy (UK)</a>
+          <a href="https://www.researchgate.net/publication/404372732_Re-imagining_Gender_in_the_Early_Childhood_Workforce_Feminist_and_More-than-human_Perspectives" target="_blank" rel="noopener noreferrer">Read Excerpt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <script>
 function showPage(id, btn) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -308,6 +448,17 @@ function openHome(anchorId) {
 function openPublications(anchorId) {
   showPage('publications');
   if (anchorId) setTimeout(() => scrollToId(anchorId), 20);
+}
+
+function activatePubTab(btn, targetId) {
+  const row = btn.closest('.filter-row');
+  if (row) row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  scrollToId(targetId);
+}
+
+function openBookPage() {
+  showPage('book');
 }
 </script>
 </body>
