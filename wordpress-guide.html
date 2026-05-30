@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WordPress Deployment Guide — Dr. Sid Mohandas</title>
+<title>WordPress Deployment Guide â€” Dr. Sid Mohandas</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,10 +14,10 @@
 html { font-size: 16px; scroll-behavior: smooth; }
 body { background: var(--parchment); color: var(--ink); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7; }
 
-/* ── TOP BAR ── */
+/* â”€â”€ TOP BAR â”€â”€ */
 .top-accent { height: 6px; background: var(--ink); }
 
-/* ── NAV ── */
+/* â”€â”€ NAV â”€â”€ */
 nav {
   background: var(--cream); border-bottom: 1px solid var(--rule);
   display: flex; align-items: center; justify-content: space-between;
@@ -26,7 +26,7 @@ nav {
 .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--ink); text-decoration: none; }
 .nav-tag { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
 
-/* ── HERO ── */
+/* â”€â”€ HERO â”€â”€ */
 .hero {
   background: var(--ink); color: #fff;
   padding: 64px 48px 56px;
@@ -40,7 +40,7 @@ nav {
 .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--mid); line-height: 1; display: block; }
 .hero-stat-label { font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); }
 
-/* ── PROGRESS BAR ── */
+/* â”€â”€ PROGRESS BAR â”€â”€ */
 .progress-bar {
   background: var(--cream); border-bottom: 1px solid var(--rule);
   display: flex; padding: 0 48px;
@@ -59,10 +59,10 @@ nav {
   font-size: 0.62rem; flex-shrink: 0;
 }
 
-/* ── MAIN LAYOUT ── */
+/* â”€â”€ MAIN LAYOUT â”€â”€ */
 .main { display: grid; grid-template-columns: 260px 1fr; min-height: calc(100vh - 200px); }
 
-/* ── SIDEBAR ── */
+/* â”€â”€ SIDEBAR â”€â”€ */
 .sidebar { background: var(--cream); border-right: 1px solid var(--rule); padding: 40px 24px; position: sticky; top: 56px; height: fit-content; }
 .sidebar-label { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
 .sidebar-nav { list-style: none; }
@@ -81,10 +81,10 @@ nav {
 .sidebar-divider { height: 1px; background: var(--rule); margin: 20px 0; }
 .sidebar-note { font-size: 0.72rem; color: var(--muted); line-height: 1.65; font-style: italic; font-family: 'Cormorant Garamond', serif; }
 
-/* ── CONTENT ── */
+/* â”€â”€ CONTENT â”€â”€ */
 .content { padding: 48px 56px 80px; }
 
-/* ── PHASE BLOCKS ── */
+/* â”€â”€ PHASE BLOCKS â”€â”€ */
 .phase { margin-bottom: 56px; }
 .phase-header {
   display: flex; align-items: center; gap: 16px;
@@ -98,7 +98,7 @@ nav {
 .phase-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; line-height: 1.1; }
 .phase-desc { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
 
-/* ── STEPS ── */
+/* â”€â”€ STEPS â”€â”€ */
 .step {
   display: grid; grid-template-columns: 48px 1fr;
   padding: 24px 0; border-bottom: 1px solid var(--rule);
@@ -116,7 +116,7 @@ nav {
 .step-text { font-size: 0.87rem; line-height: 1.8; color: #333; margin-bottom: 10px; }
 .step-text strong { font-weight: 500; }
 
-/* ── CALLOUTS ── */
+/* â”€â”€ CALLOUTS â”€â”€ */
 .callout {
   padding: 12px 16px; border-radius: 0 4px 4px 0; margin: 10px 0;
   font-size: 0.82rem; line-height: 1.65;
@@ -125,22 +125,22 @@ nav {
 .callout-warn { background: #e8e8e8; border-left: 3px solid #000; color: #111; }
 .callout-success { background: #f0f0f0; border-left: 3px solid #333; color: #222; }
 
-/* ── CODE PILLS ── */
+/* â”€â”€ CODE PILLS â”€â”€ */
 code {
   background: #f0f0f0; border: 1px solid #ddd; border-radius: 3px;
   padding: 2px 7px; font-family: 'Courier New', monospace; font-size: 0.8rem; color: #111;
 }
 
-/* ── FILE LIST ── */
+/* â”€â”€ FILE LIST â”€â”€ */
 .file-list { list-style: none; margin: 10px 0; }
 .file-list li {
   display: flex; align-items: center; gap: 10px;
   background: var(--parchment); border: 1px solid var(--rule);
   padding: 9px 14px; margin-bottom: 4px; font-size: 0.82rem;
 }
-.file-list li::before { content: '▸'; font-size: 0.9rem; }
+.file-list li::before { content: 'â–¸'; font-size: 0.9rem; }
 
-/* ── FIND REPLACE TABLE ── */
+/* â”€â”€ FIND REPLACE TABLE â”€â”€ */
 .fr-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.8rem; }
 .fr-table th {
   background: #000; color: #fff; padding: 8px 12px;
@@ -151,7 +151,7 @@ code {
 .fr-table code { font-size: 0.72rem; word-break: break-all; }
 .fr-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 3px; }
 
-/* ── PLUGIN CARDS ── */
+/* â”€â”€ PLUGIN CARDS â”€â”€ */
 .plugin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
 .plugin-card {
   background: var(--cream); border: 1px solid var(--rule);
@@ -165,7 +165,7 @@ code {
 .plugin-name { font-size: 0.85rem; font-weight: 500; margin-bottom: 3px; }
 .plugin-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
 
-/* ── FINAL BANNER ── */
+/* â”€â”€ FINAL BANNER â”€â”€ */
 .final-banner {
   background: var(--ink); color: #fff; padding: 40px 48px;
   display: grid; grid-template-columns: 1fr 200px; gap: 32px; align-items: center;
@@ -180,7 +180,7 @@ code {
 .final-url-label { font-size: 0.55rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
 .final-url-text { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--mid); word-break: break-all; }
 
-/* ── FOOTER ── */
+/* â”€â”€ FOOTER â”€â”€ */
 .site-footer {
   background: var(--ink); padding: 28px 48px;
   display: flex; justify-content: space-between; align-items: center;
@@ -216,7 +216,7 @@ code {
   <div>
     <div class="hero-eyebrow">Step-by-step walkthrough</div>
     <h1>How to make your<br>website <em>live</em> on WordPress</h1>
-    <p class="hero-sub">Follow these 16 steps from start to finish. No technical experience needed — every step is explained in plain English.</p>
+    <p class="hero-sub">Follow these 16 steps from start to finish. No technical experience needed â€” every step is explained in plain English.</p>
   </div>
   <div class="hero-stat">
     <span class="hero-stat-num">16</span>
@@ -257,7 +257,7 @@ code {
       <li><a href="#step16"><span class="s-num">16</span> Publish!</a></li>
     </ul>
     <div class="sidebar-divider"></div>
-    <p class="sidebar-note">Something not working? Take a screenshot and send it back — every issue is fixable.</p>
+    <p class="sidebar-note">Something not working? Take a screenshot and send it back â€” every issue is fixable.</p>
   </aside>
 
   <!-- CONTENT -->
@@ -269,7 +269,7 @@ code {
         <div class="phase-badge">1</div>
         <div>
           <div class="phase-title">Get your 3 photos ready</div>
-          <div class="phase-desc">Before anything else — upload your images to WordPress</div>
+          <div class="phase-desc">Before anything else â€” upload your images to WordPress</div>
         </div>
       </div>
 
@@ -279,9 +279,9 @@ code {
           <div class="step-title">Find these 3 image files on your computer</div>
           <p class="step-text">The website uses 3 photos. Make sure you have all three saved and can find them easily on your computer before you start.</p>
           <ul class="file-list">
-            <li><strong>Sid Mohandas wt Book.jpg</strong> — the big hero portrait on the home page</li>
-            <li><strong>Sid Mohandas Published Photo.png</strong> — the photo on the Latest Book page</li>
-            <li><strong>Sid Mohandas Book Cover.jpg</strong> — the book cover image</li>
+            <li><strong>Sid Mohandas wt Book.jpg</strong> â€” the big hero portrait on the home page</li>
+            <li><strong>Sid Mohandas Published Photo.png</strong> â€” the photo on the Latest Book page</li>
+            <li><strong>Sid Mohandas Book Cover.jpg</strong> â€” the book cover image</li>
           </ul>
         </div>
       </div>
@@ -291,15 +291,15 @@ code {
         <div class="step-body">
           <div class="step-title">Log in to WordPress</div>
           <p class="step-text">Open your browser and go to: <code>sidmohandas.com/wp-admin</code><br>Type your username and password, then click <strong>Log In</strong>.</p>
-          <div class="callout callout-tip">→ If you've forgotten your password, click "Lost your password?" on the login screen.</div>
+          <div class="callout callout-tip">â†’ If you've forgotten your password, click "Lost your password?" on the login screen.</div>
         </div>
       </div>
 
       <div class="step" id="step3">
         <div class="step-num-col"><div class="step-circle">3</div><div class="step-line"></div></div>
         <div class="step-body">
-          <div class="step-title">Go to Media → Add New</div>
-          <p class="step-text">Look at the black menu on the left side of your screen. Click <strong>Media</strong>, then click the button that says <strong>Add New Media File</strong> at the top of the page. Drag all 3 photos into the upload area at once. Wait until all 3 show a tick — that means they are uploaded.</p>
+          <div class="step-title">Go to Media â†’ Add New</div>
+          <p class="step-text">Look at the black menu on the left side of your screen. Click <strong>Media</strong>, then click the button that says <strong>Add New Media File</strong> at the top of the page. Drag all 3 photos into the upload area at once. Wait until all 3 show a tick â€” that means they are uploaded.</p>
         </div>
       </div>
 
@@ -307,10 +307,10 @@ code {
         <div class="step-num-col"><div class="step-circle">4</div><div class="step-line"></div></div>
         <div class="step-body">
           <div class="step-title">Copy the URL of each photo</div>
-          <p class="step-text">Click on the first photo you uploaded. A panel opens on the right. Scroll down until you see a box labelled <strong>File URL</strong> — it will look something like this:</p>
+          <p class="step-text">Click on the first photo you uploaded. A panel opens on the right. Scroll down until you see a box labelled <strong>File URL</strong> â€” it will look something like this:</p>
           <code>https://sidmohandas.com/wp-content/uploads/2026/05/Sid-Mohandas-wt-Book.jpg</code>
           <p class="step-text" style="margin-top:10px;">Click inside that box, press <code>Ctrl + A</code> to select all, then <code>Ctrl + C</code> to copy it. Paste it into a Notepad or Notes app. Repeat for all 3 photos. You should end up with 3 URLs in your notepad.</p>
-          <div class="callout callout-warn">! WordPress renames files — spaces become dashes. Always use the URL WordPress gives you, not the original filename.</div>
+          <div class="callout callout-warn">! WordPress renames files â€” spaces become dashes. Always use the URL WordPress gives you, not the original filename.</div>
         </div>
       </div>
     </div>
@@ -329,15 +329,15 @@ code {
         <div class="step-num-col"><div class="step-circle">5</div><div class="step-line"></div></div>
         <div class="step-body">
           <div class="step-title">Open index.html in Notepad</div>
-          <p class="step-text">Find the <strong>index.html</strong> file I gave you on your computer. Right-click on it and choose <strong>Open with</strong> → <strong>Notepad</strong> (Windows) or <strong>TextEdit</strong> (Mac). A lot of code will appear — that is completely normal, don't worry about it.</p>
-          <div class="callout callout-tip">→ On Mac, if TextEdit opens in "Rich Text" mode, go to Format → Make Plain Text first.</div>
+          <p class="step-text">Find the <strong>index.html</strong> file I gave you on your computer. Right-click on it and choose <strong>Open with</strong> â†’ <strong>Notepad</strong> (Windows) or <strong>TextEdit</strong> (Mac). A lot of code will appear â€” that is completely normal, don't worry about it.</p>
+          <div class="callout callout-tip">â†’ On Mac, if TextEdit opens in "Rich Text" mode, go to Format â†’ Make Plain Text first.</div>
         </div>
       </div>
 
       <div class="step" id="step6">
         <div class="step-num-col"><div class="step-circle">6</div><div class="step-line"></div></div>
         <div class="step-body">
-          <div class="step-title">Use Find &amp; Replace — do this 3 times</div>
+          <div class="step-title">Use Find &amp; Replace â€” do this 3 times</div>
           <p class="step-text">Press <code>Ctrl + H</code> on Windows or <code>Cmd + Option + F</code> on Mac. This opens the Find &amp; Replace box. Copy the old path in the <em>Find</em> box and your new WordPress URL in the <em>Replace</em> box, then click <strong>Replace All</strong>.</p>
 
           <table class="fr-table">
@@ -347,20 +347,20 @@ code {
             <tbody>
               <tr>
                 <td><code>Dr. Sid Mohandas Research Files/Sid Mohandas wt Book.jpg</code></td>
-                <td><span class="fr-label">Paste the URL from Step 4 — Photo 1</span><code>https://sidmohandas.com/wp-content/uploads/...</code></td>
+                <td><span class="fr-label">Paste the URL from Step 4 â€” Photo 1</span><code>https://sidmohandas.com/wp-content/uploads/...</code></td>
               </tr>
               <tr>
                 <td><code>Dr. Sid Mohandas Research Files/Sid Mohandas Published Photo.png</code></td>
-                <td><span class="fr-label">Paste the URL from Step 4 — Photo 2</span><code>https://sidmohandas.com/wp-content/uploads/...</code></td>
+                <td><span class="fr-label">Paste the URL from Step 4 â€” Photo 2</span><code>https://sidmohandas.com/wp-content/uploads/...</code></td>
               </tr>
               <tr>
                 <td><code>Dr. Sid Mohandas Research Files/Sid Mohandas Book Cover.jpg</code></td>
-                <td><span class="fr-label">Paste the URL from Step 4 — Photo 3</span><code>https://sidmohandas.com/wp-content/uploads/...</code></td>
+                <td><span class="fr-label">Paste the URL from Step 4 â€” Photo 3</span><code>https://sidmohandas.com/wp-content/uploads/...</code></td>
               </tr>
             </tbody>
           </table>
           <p class="step-text">When done, save the file: <code>Ctrl + S</code> (Windows) or <code>Cmd + S</code> (Mac).</p>
-          <div class="callout callout-success">✓ After all 3 replacements, your index.html is ready to go into WordPress.</div>
+          <div class="callout callout-success">âœ“ After all 3 replacements, your index.html is ready to go into WordPress.</div>
         </div>
       </div>
     </div>
@@ -378,7 +378,7 @@ code {
       <div class="step" id="step7">
         <div class="step-num-col"><div class="step-circle">7</div><div class="step-line"></div></div>
         <div class="step-body">
-          <div class="step-title">Go to Plugins → Add New Plugin</div>
+          <div class="step-title">Go to Plugins â†’ Add New Plugin</div>
           <p class="step-text">In the left menu of WordPress, click <strong>Plugins</strong>, then click <strong>Add New Plugin</strong> at the top of the page.</p>
         </div>
       </div>
@@ -386,7 +386,7 @@ code {
       <div class="step" id="step8">
         <div class="step-num-col"><div class="step-circle">8</div><div class="step-line"></div></div>
         <div class="step-body">
-          <div class="step-title">Install Plugin 1 — "WP Hide &amp; Security Enhancer"</div>
+          <div class="step-title">Install Plugin 1 â€” "WP Hide &amp; Security Enhancer"</div>
           <p class="step-text">Type this name in the search box. When it appears, click <strong>Install Now</strong>, wait a moment, then click <strong>Activate</strong>. This plugin lets you hide the WordPress theme header and footer on one specific page.</p>
           <div class="plugin-grid">
             <div class="plugin-card">
@@ -397,16 +397,16 @@ code {
               </div>
             </div>
           </div>
-          <div class="callout callout-warn">! Without this, the WordPress theme header and footer will show above and below your site — it will look broken.</div>
+          <div class="callout callout-warn">! Without this, the WordPress theme header and footer will show above and below your site â€” it will look broken.</div>
         </div>
       </div>
 
       <div class="step" id="step9">
         <div class="step-num-col"><div class="step-circle">9</div><div class="step-line"></div></div>
         <div class="step-body">
-          <div class="step-title">Install Plugin 2 — "Full Width Templates"</div>
-          <p class="step-text">Go back to <strong>Plugins → Add New Plugin</strong> and search for <strong>Full Width Templates</strong>. Install and activate it. This gives you a "Full Width" page option so there are no sidebars or extra columns squeezing your design.</p>
-          <div class="callout callout-tip">→ Some WordPress themes already have a Full Width option — if yours does, you may not need this plugin. Check your Page Template dropdown first (in Step 11).</div>
+          <div class="step-title">Install Plugin 2 â€” "Full Width Templates"</div>
+          <p class="step-text">Go back to <strong>Plugins â†’ Add New Plugin</strong> and search for <strong>Full Width Templates</strong>. Install and activate it. This gives you a "Full Width" page option so there are no sidebars or extra columns squeezing your design.</p>
+          <div class="callout callout-tip">â†’ Some WordPress themes already have a Full Width option â€” if yours does, you may not need this plugin. Check your Page Template dropdown first (in Step 11).</div>
         </div>
       </div>
     </div>
@@ -417,15 +417,15 @@ code {
         <div class="phase-badge">4</div>
         <div>
           <div class="phase-title">Create the page and go live</div>
-          <div class="phase-desc">The final steps — paste your code and publish</div>
+          <div class="phase-desc">The final steps â€” paste your code and publish</div>
         </div>
       </div>
 
       <div class="step" id="step10">
         <div class="step-num-col"><div class="step-circle">10</div><div class="step-line"></div></div>
         <div class="step-body">
-          <div class="step-title">Go to Pages → Add New Page</div>
-          <p class="step-text">In the WordPress left menu, click <strong>Pages</strong> → <strong>Add New Page</strong>. At the top, where it says "Add title", type: <code>Dr. Sid Mohandas</code></p>
+          <div class="step-title">Go to Pages â†’ Add New Page</div>
+          <p class="step-text">In the WordPress left menu, click <strong>Pages</strong> â†’ <strong>Add New Page</strong>. At the top, where it says "Add title", type: <code>Dr. Sid Mohandas</code></p>
         </div>
       </div>
 
@@ -433,8 +433,8 @@ code {
         <div class="step-num-col"><div class="step-circle">11</div><div class="step-line"></div></div>
         <div class="step-body">
           <div class="step-title">Set the page template to "Full Width" or "Blank"</div>
-          <p class="step-text">Look at the right-hand panel. Click on <strong>Page</strong> (the tab), then scroll down to find <strong>Template</strong>. Click the dropdown and choose <strong>Full Width</strong>, <strong>Full-Width Template</strong>, <strong>Blank</strong>, or <strong>No Sidebar</strong> — whatever your theme offers. This removes extra columns from around your content.</p>
-          <div class="callout callout-tip">→ If you don't see a Template option, your theme may not support it — try the "Full Width Templates" plugin from Step 9.</div>
+          <p class="step-text">Look at the right-hand panel. Click on <strong>Page</strong> (the tab), then scroll down to find <strong>Template</strong>. Click the dropdown and choose <strong>Full Width</strong>, <strong>Full-Width Template</strong>, <strong>Blank</strong>, or <strong>No Sidebar</strong> â€” whatever your theme offers. This removes extra columns from around your content.</p>
+          <div class="callout callout-tip">â†’ If you don't see a Template option, your theme may not support it â€” try the "Full Width Templates" plugin from Step 9.</div>
         </div>
       </div>
 
@@ -446,38 +446,47 @@ code {
         </div>
       </div>
 
-      <div class="step" id="step13">
+            <div class="step" id="step13">
         <div class="step-num-col"><div class="step-circle">13</div><div class="step-line"></div></div>
         <div class="step-body">
-          <div class="step-title">Open index.html and copy ALL the code</div>
-          <p class="step-text">Switch back to your Notepad with the <strong>index.html</strong> file open. Click anywhere inside it, then press <code>Ctrl + A</code> to select every single character, then press <code>Ctrl + C</code> to copy it all.</p>
+          <div class="step-title">Choose the correct code text file and copy ALL code</div>
+          <p class="step-text">Use the matching <strong>.txt</strong> export file for the page you are creating in WordPress. Open that .txt file, click inside, then press <code>Ctrl + A</code> and <code>Ctrl + C</code>.</p>
+          <table class="fr-table" style="margin-top:12px;">
+            <tr><th style="width:40%">If creating this WordPress page</th><th>Copy from this file</th></tr>
+            <tr><td>Home page</td><td><code>index.txt</code></td></tr>
+            <tr><td>About page</td><td><code>about.txt</code></td></tr>
+            <tr><td>Research page</td><td><code>research.txt</code></td></tr>
+            <tr><td>Publications page</td><td><code>publications.txt</code></td></tr>
+            <tr><td>Contact page</td><td><code>contact.txt</code></td></tr>
+            <tr><td>Sitemap page</td><td><code>sitemap.txt</code></td></tr>
+          </table>
+          <div class="callout callout-tip" style="margin-top:10px;">-> If you are only launching one main page, use <code>index.txt</code>. If you are creating all pages in WordPress, repeat Steps 12-16 once per page using the matching .txt file above.</div>
         </div>
       </div>
 
       <div class="step" id="step14">
         <div class="step-num-col"><div class="step-circle">14</div><div class="step-line"></div></div>
         <div class="step-body">
-          <div class="step-title">Paste the code into the Custom HTML block</div>
-          <p class="step-text">Click inside the Custom HTML text box in WordPress (the empty area you added in Step 12), then press <code>Ctrl + V</code> to paste. The box will fill up with a lot of code — that is completely correct.</p>
-          <div class="callout callout-warn">! Do not click the Preview button yet — it will look plain until the page is saved.</div>
+          <div class="step-title">Paste code into the WordPress Custom HTML block</div>
+          <p class="step-text">In WordPress, click inside the Custom HTML block you added in Step 12 and press <code>Ctrl + V</code>. This must be a full paste of the selected .txt file code. The editor will show a large amount of HTML/CSS/JS - this is expected.</p>
+          <div class="callout callout-warn">! Do not click the Preview button yet - it will look plain until the page is saved.</div>
         </div>
       </div>
-
-      <div class="step" id="step15">
+<div class="step" id="step15">
         <div class="step-num-col"><div class="step-circle">15</div><div class="step-line"></div></div>
         <div class="step-body">
           <div class="step-title">Set the page URL (the web address)</div>
-          <p class="step-text">In the right-hand panel, click <strong>Permalink</strong>. You will see a URL slug — change it to something short and clean, like: <code>sid-mohandas</code><br><br>This means your website will live at: <code>sidmohandas.com/sid-mohandas</code></p>
+          <p class="step-text">In the right-hand panel, click <strong>Permalink</strong>. You will see a URL slug â€” change it to something short and clean, like: <code>sid-mohandas</code><br><br>This means your website will live at: <code>sidmohandas.com/sid-mohandas</code></p>
         </div>
       </div>
 
       <div class="step" id="step16">
         <div class="step-num-col"><div class="step-circle">16</div></div>
         <div class="step-body">
-          <div class="step-title">Click Publish — you're live! </div>
-          <p class="step-text">Click the blue <strong>Publish</strong> button in the top-right corner. WordPress will ask you to confirm — click <strong>Publish</strong> again. Then click <strong>View Page</strong> to see your website live on the internet.</p>
-          <div class="callout callout-success">✓ If your website looks correct — congratulations! Dr. Sid Mohandas is live on the web. Share the link: <strong>sidmohandas.com/sid-mohandas</strong></div>
-          <div class="callout callout-warn" style="margin-top:8px;">! If the WordPress header/footer is still showing — go to the WP Hide plugin settings and enable "Hide header and footer" for this specific page URL.</div>
+          <div class="step-title">Click Publish â€” you're live! </div>
+          <p class="step-text">Click the blue <strong>Publish</strong> button in the top-right corner. WordPress will ask you to confirm â€” click <strong>Publish</strong> again. Then click <strong>View Page</strong> to see your website live on the internet.</p>
+          <div class="callout callout-success">âœ“ If your website looks correct â€” congratulations! Dr. Sid Mohandas is live on the web. Share the link: <strong>sidmohandas.com/sid-mohandas</strong></div>
+          <div class="callout callout-warn" style="margin-top:8px;">! If the WordPress header/footer is still showing â€” go to the WP Hide plugin settings and enable "Hide header and footer" for this specific page URL.</div>
         </div>
       </div>
     </div>
@@ -489,7 +498,7 @@ code {
 <div class="final-banner">
   <div>
     <h2>Something not working?</h2>
-    <p>The most common issues are: photos not showing (double-check the URLs in Step 6), the WordPress theme overlapping (make sure the WP Hide plugin is active and applied to this page), or the layout looking squashed (switch the page template to Blank or Full Width). Screenshot it and send it over — every issue is fixable.</p>
+    <p>The most common issues are: photos not showing (double-check the URLs in Step 6), the WordPress theme overlapping (make sure the WP Hide plugin is active and applied to this page), or the layout looking squashed (switch the page template to Blank or Full Width). Screenshot it and send it over â€” every issue is fixable.</p>
   </div>
   <div class="final-url">
     <div class="final-url-label">Your live URL will be</div>
@@ -500,8 +509,9 @@ code {
 <!-- FOOTER -->
 <div class="site-footer">
   <span class="footer-logo">Dr. Sid Mohandas</span>
-  <span class="footer-note">WordPress Deployment Guide · Prepared May 2026</span>
+  <span class="footer-note">WordPress Deployment Guide Â· Prepared May 2026</span>
 </div>
 
 </body>
 </html>
+
