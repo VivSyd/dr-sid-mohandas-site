@@ -263,6 +263,33 @@ code {
   <!-- CONTENT -->
   <div class="content">
 
+    <div class="phase" id="safe-rollout">
+      <div class="phase-header">
+        <div class="phase-badge">0</div>
+        <div>
+          <div class="phase-title">Safe Rollout First (Highly Recommended)</div>
+          <div class="phase-desc">Build safely without risking the current live site</div>
+        </div>
+      </div>
+      <div class="callout callout-tip">
+        Start on a staging copy first. This keeps the current live website unchanged while you build and review the new version.
+      </div>
+      <div class="step">
+        <div class="step-num-col"><div class="step-circle">A</div><div class="step-line"></div></div>
+        <div class="step-body">
+          <div class="step-title">Preferred: use a staging site / clone</div>
+          <p class="step-text">In hosting or WordPress tools, create a staging copy (sometimes called Clone, Staging, or Test Site). Complete all steps in this guide on staging. Only push staging to live after final approval.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num-col"><div class="step-circle">B</div><div class="step-line"></div></div>
+        <div class="step-body">
+          <div class="step-title">Fallback: build on a hidden test page</div>
+          <p class="step-text">If staging is unavailable, create a new page slug such as <code>sid-mohandas-new</code>, keep it out of navigation, and build there first. Replace the existing homepage only when Dr. Sid confirms everything looks correct.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- PHASE 1 -->
     <div class="phase" id="phase1">
       <div class="phase-header">
