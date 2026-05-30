@@ -790,6 +790,22 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
     padding-left: 20px;
     padding-right: 20px;
   }
+  .site-footer {
+    grid-template-columns: 1fr !important;
+    gap: 28px;
+    justify-items: start;
+  }
+  .site-footer > div,
+  .site-footer > div:last-child,
+  .site-footer .footer-links,
+  .site-footer .footer-links li,
+  .site-footer .footer-links a {
+    width: 100%;
+    text-align: left !important;
+    justify-content: flex-start;
+    white-space: normal;
+    word-break: break-word;
+  }
   .site-footer > div {
     min-width: 0;
   }
