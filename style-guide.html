@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style Guide — Dr. Sid Mohandas</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink:      #000000;
+  --white:    #ffffff;
+  --cream:    #f5f5f5;
+  --parchment:#f0f0f0;
+  --mid:      #cccccc;
+  --muted:    #666666;
+  --rule:     #e0e0e0;
+}
+html { font-size: 16px; }
+body { background: var(--cream); color: var(--ink); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.7; }
+
+/* TOP BAR */
+.top-accent { height: 6px; background: var(--ink); }
+
+/* NAV */
+nav {
+  background: var(--white); border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 56px;
+}
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+.nav-tag { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+
+/* HERO */
+.hero { background: var(--ink); color: #fff; padding: 56px 48px 48px; }
+.hero-eyebrow { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 3rem; line-height: 1.05; margin-bottom: 14px; }
+.hero h1 em { font-style: italic; color: var(--mid); }
+.hero-sub { font-size: 0.88rem; color: rgba(255,255,255,0.45); max-width: 560px; line-height: 1.8; }
+
+/* SECTION */
+.section { padding: 56px 48px; border-bottom: 1px solid var(--rule); }
+.section:nth-child(odd) { background: var(--white); }
+.section:nth-child(even) { background: var(--cream); }
+.section-label { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; display: flex; align-items: center; gap: 14px; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin-bottom: 32px; }
+
+/* COLOUR GRID */
+.colour-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.swatch-card { border: 1px solid var(--rule); overflow: hidden; }
+.swatch-block { height: 80px; }
+.swatch-info { background: var(--white); padding: 12px 14px; border-top: 1px solid var(--rule); }
+.swatch-name { font-size: 0.78rem; font-weight: 500; margin-bottom: 3px; }
+.swatch-hex { font-family: 'Courier New', monospace; font-size: 0.72rem; color: var(--muted); }
+.swatch-use { font-size: 0.65rem; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+/* TYPE SAMPLES */
+.type-table { width: 100%; border-collapse: collapse; }
+.type-table tr { border-bottom: 1px solid var(--rule); }
+.type-table td { padding: 20px 0; vertical-align: middle; }
+.type-table td:first-child { width: 180px; }
+.type-meta { font-size: 0.7rem; color: var(--muted); line-height: 1.6; }
+.type-meta strong { display: block; font-size: 0.75rem; color: var(--ink); font-weight: 500; margin-bottom: 2px; }
+.type-meta code { font-family: 'Courier New', monospace; font-size: 0.68rem; background: var(--parchment); padding: 1px 5px; }
+.divider-line { width: 1px; background: var(--rule); padding: 0 !important; }
+
+/* TYPE SPECIMENS */
+.t-display { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 3.2rem; line-height: 1.05; }
+.t-display em { font-style: italic; color: var(--muted); }
+.t-h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 2.4rem; line-height: 1.08; }
+.t-h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.8rem; line-height: 1.1; }
+.t-h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 1.3rem; line-height: 1.15; }
+.t-body { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.95rem; line-height: 1.85; max-width: 540px; }
+.t-body-sm { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 0.82rem; line-height: 1.75; color: var(--muted); max-width: 520px; }
+.t-eyebrow { font-family: 'Jost', sans-serif; font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+.t-caption { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.88rem; color: var(--muted); }
+.t-nav { font-family: 'Jost', sans-serif; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.t-pub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; line-height: 1.4; }
+.t-stat { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; color: var(--mid); }
+.t-doi { font-family: 'Courier New', monospace; font-size: 0.72rem; color: var(--muted); }
+
+/* UI ELEMENTS */
+.elements-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.elem-group { margin-bottom: 28px; }
+.elem-label { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.btn-primary { background: var(--ink); color: var(--white); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 13px 28px; text-decoration: none; display: inline-block; border: none; cursor: pointer; }
+.btn-ghost { background: #111111; color: #f5f5f5; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 13px 28px; display: inline-block; border: 1px solid #333333; cursor: pointer; }
+.tag { font-size: 0.62rem; letter-spacing: 0.1em; color: var(--ink); border: 1px solid var(--mid); padding: 5px 12px; background: var(--parchment); display: inline-block; margin: 3px; }
+.pub-badge { font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--rule); color: var(--muted); padding: 2px 7px; display: inline-block; }
+.nav-link-active { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 2px; }
+.footer-col-label-eg { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); opacity: 0.6; }
+.strip-eg { background: var(--ink); padding: 12px 20px; display: inline-flex; gap: 28px; }
+.strip-text { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+
+/* SPACING */
+.spacing-row { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-end; }
+.sp-block { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.sp-vis { background: var(--ink); width: 100%; }
+.sp-label { font-size: 0.6rem; color: var(--muted); font-family: 'Courier New', monospace; }
+.sp-name { font-size: 0.58rem; color: var(--ink); text-align: center; }
+
+/* DARK SWATCH SECTION */
+.dark-section { background: var(--ink); padding: 48px; border-bottom: 1px solid #222; }
+.dark-section .section-label { color: var(--mid); }
+.dark-section .section-label::after { background: rgba(255,255,255,0.1); }
+.dark-section .swatch-info { background: #1a1a1a; border-top-color: #2a2a2a; }
+.dark-section .swatch-name { color: #fff; }
+.dark-section .swatch-use { color: var(--mid); }
+
+/* FOOTER */
+.guide-footer {
+  background: var(--ink); color: rgba(255,255,255,0.25);
+  padding: 24px 48px; display: flex; justify-content: space-between;
+  font-size: 0.58rem; letter-spacing: 0.1em; border-top: 3px solid var(--ink);
+}
+
+@media (max-width: 700px) {
+  nav, .section, .hero { padding-left: 20px; padding-right: 20px; }
+  .elements-grid, .colour-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="top-accent"></div>
+
+<nav>
+  <a href="#" class="nav-logo">Dr. Sid Mohandas</a>
+  <span class="nav-tag">Brand Style Guide</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Official reference document</div>
+  <h1>Brand Style<br><em>Guide</em></h1>
+  <p class="hero-sub">Typography, colour values, spacing, and UI components for the Dr. Sid Mohandas website. All values are exact - copy them directly into CSS or WordPress.</p>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- COLOUR PALETTE -->
+<!-- ══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">01 - Colour Palette</div>
+  <div class="colour-grid">
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#000000;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ink</div>
+        <div class="swatch-hex">#000000</div>
+        <div class="swatch-use">Primary text - buttons - headers - footer bg - top accent bar</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#ffffff; border-bottom:1px solid #e0e0e0;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">White</div>
+        <div class="swatch-hex">#ffffff</div>
+        <div class="swatch-use">Card backgrounds - sidebar - nav background</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#f5f5f5;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Cream</div>
+        <div class="swatch-hex">#f5f5f5</div>
+        <div class="swatch-use">Page background - alternate section bg</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#f0f0f0;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Parchment</div>
+        <div class="swatch-hex">#f0f0f0</div>
+        <div class="swatch-use">Hero left panel - tag backgrounds - surface fills</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#cccccc;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Mid / Silver</div>
+        <div class="swatch-hex">#cccccc</div>
+        <div class="swatch-use">Stats on dark bg - hero book text - footer accent labels - italic em on dark</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#666666;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Muted</div>
+        <div class="swatch-hex">#666666</div>
+        <div class="swatch-use">Secondary text - captions - nav links - meta text - publication journal names</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#e0e0e0;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Rule</div>
+        <div class="swatch-hex">#e0e0e0</div>
+        <div class="swatch-use">Dividers - borders - horizontal rules - table separators</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#111111;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ghost Button Bg</div>
+        <div class="swatch-hex">#111111</div>
+        <div class="swatch-use">Ghost / secondary button background only</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#333333;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Ghost Border</div>
+        <div class="swatch-hex">#333333</div>
+        <div class="swatch-use">Ghost button border only</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#0a0a0a;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Photo Frame</div>
+        <div class="swatch-hex">#0a0a0a</div>
+        <div class="swatch-use">Portrait &amp; book photo frame background</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:#2a2a2a;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Frame Border</div>
+        <div class="swatch-hex">#2a2a2a</div>
+        <div class="swatch-use">Portrait &amp; book photo frame border</div>
+      </div>
+    </div>
+
+    <div class="swatch-card">
+      <div class="swatch-block" style="background:rgba(255,255,255,0.45);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Footer Link</div>
+        <div class="swatch-hex">rgba(255,255,255, 0.45)</div>
+        <div class="swatch-use">Footer navigation links on dark background</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- TYPOGRAPHY -->
+<!-- ══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">02 - Typography</div>
+
+  <div style="margin-bottom:32px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+    <div style="background:var(--parchment); padding:24px; border:1px solid var(--rule);">
+      <div style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Display / Serif</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; line-height:1.1; margin-bottom:6px;">Cormorant Garamond</div>
+      <div style="font-size:0.75rem;color:var(--muted);">Weights used: 300 - 400 - 500 - 600<br>Styles: Regular + Italic<br>Use: All headings, names, serif body, pull quotes, stats</div>
+    </div>
+    <div style="background:var(--parchment); padding:24px; border:1px solid var(--rule);">
+      <div style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Body / Sans</div>
+      <div style="font-family:'Jost',sans-serif; font-size:2rem; line-height:1.1; font-weight:300; margin-bottom:6px;">Jost</div>
+      <div style="font-size:0.75rem;color:var(--muted);">Weights used: 200 - 300 - 400 - 500<br>Use: Body copy, nav links, labels, UI text, buttons</div>
+    </div>
+  </div>
+
+  <table class="type-table">
+    <tr>
+      <td class="type-meta"><strong>Display Heading</strong><code>Cormorant Garamond</code><br>Weight: 300<br>Size: clamp(2.8rem, 5vw, 4.2rem)<br>Line-height: 1.05</td>
+      <td style="padding-left:32px;"><div class="t-display">Dr. Sid <em>Mohandas</em></div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>H1 - Page Title</strong><code>Cormorant Garamond</code><br>Weight: 300<br>Size: clamp(2.4rem, 4vw, 3.2rem)<br>Line-height: 1.1</td>
+      <td style="padding-left:32px;"><div class="t-h1">Publications &amp; Scholarly Output</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>H2 - Section Heading</strong><code>Cormorant Garamond</code><br>Weight: 400<br>Size: 2.4rem<br>Line-height: 1.15</td>
+      <td style="padding-left:32px;"><div class="t-h2">Re-Imagining Gender in the Early Childhood Workforce</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>H3 - Sub Heading</strong><code>Cormorant Garamond</code><br>Weight: 400<br>Size: 1.6rem<br>Line-height: 1.15</td>
+      <td style="padding-left:32px;"><div class="t-h3">Feminist and More-than-human Perspectives</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>Body Text</strong><code>Jost</code><br>Weight: 300<br>Size: 0.95rem<br>Line-height: 1.85</td>
+      <td style="padding-left:32px;"><div class="t-body">Dr Sid Mohandas is a Montessori practitioner and childhood studies scholar, whose research in early childhood employs feminist, decolonial, anticolonial and more-than-human approaches.</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>Body Small / Muted</strong><code>Jost</code><br>Weight: 300<br>Size: 0.82rem<br>Colour: #666666</td>
+      <td style="padding-left:32px;"><div class="t-body-sm">Peer-reviewed journal articles, book chapters, edited collections, theses, and commissioned outputs.</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>Eyebrow / Label</strong><code>Jost</code><br>Weight: 300<br>Size: 0.58-0.62rem<br>Letter-spacing: 0.22em<br>Uppercase</td>
+      <td style="padding-left:32px;"><div class="t-eyebrow">Middlesex University London</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>Nav Link</strong><code>Jost</code><br>Weight: 300<br>Size: 0.68rem<br>Letter-spacing: 0.16em<br>Uppercase</td>
+      <td style="padding-left:32px;"><div class="t-nav">Professional Profile &nbsp; - &nbsp; <span style="color:var(--ink);border-bottom:1px solid var(--ink);">Publications</span> &nbsp; - &nbsp; Contact</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>Publication Title</strong><code>Cormorant Garamond</code><br>Weight: 400<br>Italic<br>Size: 1.05rem</td>
+      <td style="padding-left:32px;"><div class="t-pub">Reconfiguring the 'Male Montessorian': the mattering of gender through pink towering practices</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>Stat / Number</strong><code>Cormorant Garamond</code><br>Weight: 300<br>Size: 3.5-4rem<br>Colour on dark: #cccccc</td>
+      <td style="padding-left:32px; background:var(--ink);"><div class="t-stat">160</div><div style="font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px;">Google Scholar Citations</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>DOI / Code</strong><code>Courier New</code><br>Monospace<br>Size: 0.72rem<br>Colour: #666666</td>
+      <td style="padding-left:32px;"><div class="t-doi">DOI: 10.1080/09575146.2019.1620181</div></td>
+    </tr>
+    <tr>
+      <td class="type-meta"><strong>Caption / Tagline</strong><code>Cormorant Garamond</code><br>Italic<br>Size: 0.88rem<br>Colour: #666666</td>
+      <td style="padding-left:32px;"><div class="t-caption">Feminist and More-than-human Perspectives</div></td>
+    </tr>
+  </table>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- UI ELEMENTS -->
+<!-- ══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">03 - UI Elements &amp; Components</div>
+  <div class="elements-grid">
+    <div>
+      <div class="elem-group">
+        <div class="elem-label">Buttons</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="btn-primary">Check Out My Book</button>
+          <button class="btn-ghost">Professional Profile</button>
+        </div>
+        <div style="margin-top:12px;font-size:0.72rem;color:var(--muted);line-height:1.7;">
+          Primary: bg <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#000000</code> - text <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#ffffff</code><br>
+          Ghost: bg <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#111111</code> - text <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#f5f5f5</code> - border <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#333333</code><br>
+          Font: Jost 0.62rem - letter-spacing 0.18em - UPPERCASE - padding 13px 28px
+        </div>
+      </div>
+
+      <div class="elem-group">
+        <div class="elem-label">Research Tags</div>
+        <div>
+          <span class="tag">Feminist New Materialism</span>
+          <span class="tag">Decolonial Theory</span>
+          <span class="tag">Early Childhood</span>
+          <span class="tag">Posthumanism</span>
+          <span class="tag">Montessori</span>
+        </div>
+        <div style="margin-top:10px;font-size:0.72rem;color:var(--muted);">
+          Border: <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#cccccc</code> - bg <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#f0f0f0</code> - text <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#000000</code> - padding 5px 12px
+        </div>
+      </div>
+
+      <div class="elem-group">
+        <div class="elem-label">Publication Type Badges</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="pub-badge">Journal Article</span>
+          <span class="pub-badge">Book Chapter</span>
+          <span class="pub-badge">Special Issue</span>
+          <span class="pub-badge">Forthcoming</span>
+          <span class="pub-badge">PhD Thesis</span>
+          <span class="pub-badge">Report</span>
+        </div>
+        <div style="margin-top:10px;font-size:0.72rem;color:var(--muted);">
+          Font: Jost 0.55rem - letter-spacing 0.1em - UPPERCASE - border <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#e0e0e0</code>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="elem-group">
+        <div class="elem-label">Ticker / Strip Bar</div>
+        <div class="strip-eg">
+          <span class="strip-text">Bloomsbury Academic Author</span>
+          <span class="strip-text">Middlesex University London</span>
+          <span class="strip-text">BERJ Co-Editor</span>
+        </div>
+        <div style="margin-top:10px;font-size:0.72rem;color:var(--muted);">
+          bg <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#000000</code> - text <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">rgba(255,255,255, 0.45)</code> - 0.62rem - letter-spacing 0.16em
+        </div>
+      </div>
+
+      <div class="elem-group">
+        <div class="elem-label">Footer Column Label</div>
+        <div class="footer-col-label-eg">Navigation</div>
+        <div style="margin-top:8px;font-size:0.72rem;color:var(--muted);">
+          Jost - 0.58rem - letter-spacing 0.2em - UPPERCASE - colour <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#cccccc</code> at opacity 0.6
+        </div>
+      </div>
+
+      <div class="elem-group">
+        <div class="elem-label">Photo Treatment (CSS Filter)</div>
+        <div style="background:var(--parchment);padding:16px;border:1px solid var(--rule);font-family:'Courier New',monospace;font-size:0.72rem;line-height:1.8;color:#333;">
+          filter: grayscale(100%)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contrast(1.08)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;brightness(0.93);
+        </div>
+        <div style="margin-top:8px;font-size:0.72rem;color:var(--muted);">Applied to all portrait and book photos. Converts any colour photo to B&amp;W automatically.</div>
+      </div>
+
+      <div class="elem-group">
+        <div class="elem-label">Top Accent Bar</div>
+        <div style="height:10px;background:#000;border-bottom:2px solid #cccccc;width:100%;"></div>
+        <div style="margin-top:8px;font-size:0.72rem;color:var(--muted);">
+          Height: 10px - bg <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#000000</code> - border-bottom 2px <code style="font-size:0.68rem;background:#f0f0f0;padding:1px 5px;">#cccccc</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- SPACING & SIZING -->
+<!-- ══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">04 - Spacing &amp; Sizing Reference</div>
+  <div class="spacing-row">
+    <div class="sp-block" style="width:48px;"><div class="sp-vis" style="height:4px;"></div><div class="sp-label">4px</div><div class="sp-name">XS</div></div>
+    <div class="sp-block" style="width:48px;"><div class="sp-vis" style="height:8px;"></div><div class="sp-label">8px</div><div class="sp-name">S</div></div>
+    <div class="sp-block" style="width:48px;"><div class="sp-vis" style="height:16px;"></div><div class="sp-label">16px</div><div class="sp-name">M</div></div>
+    <div class="sp-block" style="width:48px;"><div class="sp-vis" style="height:24px;"></div><div class="sp-label">24px</div><div class="sp-name">L</div></div>
+    <div class="sp-block" style="width:48px;"><div class="sp-vis" style="height:32px;"></div><div class="sp-label">32px</div><div class="sp-name">XL</div></div>
+    <div class="sp-block" style="width:48px;"><div class="sp-vis" style="height:48px;"></div><div class="sp-label">48px</div><div class="sp-name">2XL</div></div>
+    <div class="sp-block" style="width:48px;"><div class="sp-vis" style="height:64px;"></div><div class="sp-label">64px</div><div class="sp-name">3XL</div></div>
+    <div class="sp-block" style="width:48px;"><div class="sp-vis" style="height:80px;"></div><div class="sp-label">80px</div><div class="sp-name">4XL</div></div>
+  </div>
+  <div style="margin-top:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;font-size:0.8rem;">
+    <div style="padding:16px;background:var(--parchment);border:1px solid var(--rule);">
+      <div style="font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Page Padding</div>
+      <div>Left/Right: <strong>48px</strong></div>
+      <div style="color:var(--muted);font-size:0.75rem;">Mobile: 20px</div>
+    </div>
+    <div style="padding:16px;background:var(--parchment);border:1px solid var(--rule);">
+      <div style="font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Nav Height</div>
+      <div>Desktop: <strong>64px</strong></div>
+    </div>
+    <div style="padding:16px;background:var(--parchment);border:1px solid var(--rule);">
+      <div style="font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Breakpoint</div>
+      <div>Mobile: <strong>700px</strong></div>
+      <div style="color:var(--muted);font-size:0.75rem;">Grid collapses to 1 col</div>
+    </div>
+    <div style="padding:16px;background:var(--parchment);border:1px solid var(--rule);">
+      <div style="font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Footer Border</div>
+      <div>Top: <strong>3px solid #000</strong></div>
+    </div>
+    <div style="padding:16px;background:var(--parchment);border:1px solid var(--rule);">
+      <div style="font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Rule / Divider</div>
+      <div><strong>1px solid #e0e0e0</strong></div>
+    </div>
+    <div style="padding:16px;background:var(--parchment);border:1px solid var(--rule);">
+      <div style="font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Base Font Size</div>
+      <div>HTML: <strong>16px</strong></div>
+      <div style="color:var(--muted);font-size:0.75rem;">All rem values relative to this</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════ -->
+<!-- QUICK REF -->
+<!-- ══════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">05 - Quick Reference CSS Variables</div>
+  <div style="background:var(--ink);padding:28px;font-family:'Courier New',monospace;font-size:0.78rem;line-height:2;color:rgba(255,255,255,0.75);overflow-x:auto;">
+<pre style="color:rgba(255,255,255,0.75);white-space:pre-wrap;">:root {
+  --ink:       #000000;   /* primary text, buttons, footer bg     */
+  --white:     #ffffff;   /* card & nav backgrounds               */
+  --cream:     #f5f5f5;   /* page background                      */
+  --parchment: #f0f0f0;   /* hero panel, surface fills            */
+  --mid:       #cccccc;   /* silver - stats on dark, tag borders  */
+  --muted:     #666666;   /* secondary text, labels, captions     */
+  --rule:      #e0e0e0;   /* dividers, borders                    */
+}</pre>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="guide-footer">
+  <span>Dr. Sid Mohandas - Brand Style Guide</span>
+  <span>Ink &amp; Paper Palette - May 2026</span>
+</div>
+
+</body>
+</html>
