@@ -124,6 +124,7 @@ nav {
 .callout-tip { background: #f0f0f0; border-left: 3px solid #555; color: #333; }
 .callout-warn { background: #e8e8e8; border-left: 3px solid #000; color: #111; }
 .callout-success { background: #f0f0f0; border-left: 3px solid #333; color: #222; }
+.callout-focus { background: #f7f7f7; border-left: 3px solid #000; color: #111; }
 
 /* CODE PILLS */
 code {
@@ -216,7 +217,7 @@ code {
   <div>
     <div class="hero-eyebrow">Step-by-step walkthrough</div>
     <h1>How to make your<br>website <em>live</em> on WordPress</h1>
-    <p class="hero-sub">Follow these 16 steps from start to finish. No technical experience needed - every step is explained in plain English.</p>
+    <p class="hero-sub">Simple, one-action-at-a-time steps. No technical background needed.</p>
   </div>
   <div class="hero-stat">
     <span class="hero-stat-num">16</span>
@@ -264,6 +265,27 @@ code {
   <!-- CONTENT -->
   <div class="content">
 
+    <div class="phase" id="quick-mode">
+      <div class="phase-header">
+        <div class="phase-badge">Q</div>
+        <div>
+          <div class="phase-title">Quick Mode (ADHD-friendly)</div>
+          <div class="phase-desc">Do one action, then tick it off</div>
+        </div>
+      </div>
+      <div class="callout callout-focus">
+        Use 20-25 minute focus blocks. After each block, stop for 5 minutes.
+      </div>
+      <ul class="file-list">
+        <li>Block 1: Complete Step 0 only (safe setup).</li>
+        <li>Block 2: Complete Steps 1-4 only (photos + URLs).</li>
+        <li>Block 3: Complete Steps 5-6 only (replace image paths).</li>
+        <li>Block 4: Complete Steps 7-9 only (plugins).</li>
+        <li>Block 5: Complete Steps 10-16 on one page only, then review.</li>
+      </ul>
+      <div class="callout callout-tip">-> Important: finish one step before reading the next step.</div>
+    </div>
+
     <div class="phase" id="safe-rollout">
       <div class="phase-header">
         <div class="phase-badge">0</div>
@@ -294,6 +316,7 @@ code {
         <div class="step-body">
           <div class="step-title">Log in to WordPress admin (inside staging if available)</div>
           <p class="step-text">Open your WordPress admin URL and sign in before creating any new pages. If using staging/clone, use that admin URL. If not using staging, use <code>sidmohandas.com/wp-admin</code>, then enter your username/password and click <strong>Log In</strong>.</p>
+          <div class="callout callout-focus">Do this now: log in successfully before continuing.</div>
         </div>
       </div>
       <div class="step">
@@ -310,6 +333,7 @@ code {
             <li><strong>Sitemap (new)</strong> -> slug: <code>sitemap-new</code> -> will use <code>sitemap.txt</code></li>
           </ul>
           <div class="callout callout-tip">-> Keep all these new pages out of navigation until review is complete. Only replace live pages after approval.</div>
+          <div class="callout callout-focus">Stop point: once all 6 draft pages exist, take a short break.</div>
         </div>
       </div>
     </div>
@@ -412,6 +436,7 @@ code {
           </table>
           <p class="step-text">When done, save the file: <code>Ctrl + S</code> (Windows) or <code>Cmd + S</code> (Mac).</p>
           <div class="callout callout-success">✓ After all 3 replacements, your index.html is ready to go into WordPress.</div>
+          <div class="callout callout-focus">Stop point: close this step only after all 3 replacements are complete.</div>
         </div>
       </div>
     </div>
@@ -521,6 +546,7 @@ code {
           <div class="step-title">Paste code into the WordPress Custom HTML block</div>
           <p class="step-text">In WordPress, click inside the Custom HTML block you added in Step 12 and press <code>Ctrl + V</code>. This must be a full paste of the selected .txt file code. The editor will show a large amount of HTML/CSS/JS - this is expected.</p>
           <div class="callout callout-warn">! Do not click the Preview button yet - it will look plain until the page is saved.</div>
+          <div class="callout callout-focus">Do not edit code inside WordPress. Paste as-is, then continue.</div>
         </div>
       </div>
 <div class="step" id="step15">
@@ -538,6 +564,7 @@ code {
           <p class="step-text">Click <strong>Publish</strong> on the safe page first (staging page or hidden test slug). Review everything with Dr. Sid. After approval, duplicate/move the same content to the final live page slug.</p>
           <div class="callout callout-success">✓ Safe flow: first publish to staging/test URL, then publish final live URL only when approved.</div>
           <div class="callout callout-warn" style="margin-top:8px;">! If the WordPress header/footer is still showing, go to the WP Hide plugin settings and enable "Hide header and footer" for that exact page URL.</div>
+          <div class="callout callout-focus">Final check: ask for approval before switching any page to final live slug.</div>
         </div>
       </div>
     </div>
