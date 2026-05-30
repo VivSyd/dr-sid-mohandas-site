@@ -594,7 +594,15 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   .site-footer > div:last-child,
   .site-footer > div:last-child .footer-links li {
     width: 100%;
-    text-align: left;
+    text-align: left !important;
+  }
+  .site-footer .footer-links,
+  .site-footer .footer-links li,
+  .site-footer .footer-links a {
+    text-align: left !important;
+    justify-content: flex-start;
+    white-space: normal;
+    word-break: break-word;
   }
   .footer-bottom-bar {
     flex-direction: column;
@@ -603,8 +611,10 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
   }
 }
 
-.site-footer > div:last-child { text-align: right; }
-.site-footer > div:last-child .footer-links li { text-align: right; }
+@media (min-width: 701px) {
+  .site-footer > div:last-child { text-align: right; }
+  .site-footer > div:last-child .footer-links li { text-align: right; }
+}
 .footer-bottom-bar {
   background: var(--ink);
   border-top: 1px solid rgba(255,255,255,0.07);
