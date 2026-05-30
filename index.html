@@ -791,23 +791,35 @@ footer { background: var(--ink); padding: 56px 48px 40px; display: grid; grid-te
     padding-right: 20px;
   }
   .site-footer {
-    grid-template-columns: 1fr !important;
-    gap: 28px;
-    justify-items: start;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-areas:
+      "brand brand"
+      "nav connect";
+    gap: 28px 20px;
+    align-items: start;
   }
-  .site-footer > div,
-  .site-footer > div:last-child,
-  .site-footer .footer-links,
-  .site-footer .footer-links li,
-  .site-footer .footer-links a {
-    width: 100%;
+  .site-footer > div:nth-child(1) { grid-area: brand; text-align: left; }
+  .site-footer > div:nth-child(2) { grid-area: nav; text-align: left; }
+  .site-footer > div:nth-child(3) { grid-area: connect; text-align: right; }
+  .site-footer > div:nth-child(2) .footer-links,
+  .site-footer > div:nth-child(2) .footer-links li,
+  .site-footer > div:nth-child(2) .footer-links a {
     text-align: left !important;
     justify-content: flex-start;
     white-space: normal;
     word-break: break-word;
   }
+  .site-footer > div:nth-child(3) .footer-links,
+  .site-footer > div:nth-child(3) .footer-links li,
+  .site-footer > div:nth-child(3) .footer-links a {
+    text-align: right !important;
+    justify-content: flex-end;
+    white-space: normal;
+    word-break: break-word;
+  }
   .site-footer > div {
     min-width: 0;
+    width: 100%;
   }
 }
 
